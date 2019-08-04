@@ -18,16 +18,24 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'gatsby-starter-default',
-                short_name: 'starter',
+                name: 'chassis-css',
+                short_name: 'chassis',
                 start_url: '/',
-                background_color: '#663399',
-                theme_color: '#663399',
+                background_color: 'rgb(120,50,255)',
+                theme_color: 'rgb(120,50,255)',
                 display: 'minimal-ui',
-                icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+                icon: 'src/images/icon.png' // This path is relative to the root of the site.
             }
         },
-        'gatsby-plugin-sass'
+        'gatsby-plugin-sass',
+        {
+            resolve: 'gatsby-plugin-react-svg',
+            options: {
+                rule: {
+                    include: /assets/
+                }
+            }
+        }
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // 'gatsby-plugin-offline',
