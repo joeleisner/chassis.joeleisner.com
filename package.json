@@ -5,18 +5,26 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.21",
+    "@fortawesome/free-brands-svg-icons": "^5.10.1",
+    "@fortawesome/free-solid-svg-icons": "^5.10.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "chassis-css": "file:../../CSS/chassis-css",
     "gatsby": "^2.13.45",
     "gatsby-image": "^2.2.7",
     "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-sass": "^2.1.4",
     "gatsby-plugin-sharp": "^2.2.9",
     "gatsby-source-filesystem": "^2.1.7",
     "gatsby-transformer-sharp": "^2.2.5",
+    "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-syntax-highlighter": "^11.0.2"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
@@ -41,5 +49,6 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "browserslist": "last 2 versions and > 0% and not dead"
 }
