@@ -2,7 +2,9 @@ module.exports = {
     siteMetadata: {
         title: 'Chassis.css',
         description: 'A minimalistic grid & typography CSS framework',
-        author: '@joeleisner'
+        author: '@joeleisner',
+        version: '4.0.0',
+        siteUrl: 'https://chassis.joeleisner.com'
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -24,7 +26,7 @@ module.exports = {
                 background_color: 'rgb(120,50,255)',
                 theme_color: 'rgb(120,50,255)',
                 display: 'minimal-ui',
-                icon: 'src/images/icon.png' // This path is relative to the root of the site.
+                icon: 'src/images/icon.png'
             }
         },
         'gatsby-plugin-sass',
@@ -32,12 +34,11 @@ module.exports = {
             resolve: 'gatsby-plugin-react-svg',
             options: {
                 rule: {
-                    include: /assets/
+                    include: /images/
                 }
             }
-        }
-        // this (optional) plugin enables Progressive Web App + Offline functionality
-        // To learn more, visit: https://gatsby.dev/offline
-        // 'gatsby-plugin-offline',
+        },
+        'gatsby-plugin-offline',
+        'gatsby-plugin-sitemap'
     ]
 };
