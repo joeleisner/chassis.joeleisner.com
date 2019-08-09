@@ -1,0 +1,70 @@
+// Footer
+
+@import "../shared/animations"
+@import "../shared/colors"
+@import "../shared/mq"
+
+.footer
+    border-top: 1px solid darken($light-gray, 5%)
+
+.footer__content
+    flex: 1
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    padding-left: 0
+    padding-right: 0
+
+.footer__copyright
+    margin-bottom: 0
+    padding-top: 1rem
+    padding-bottom: .5rem
+
+.footer__information
+    padding-top: .5rem
+    padding-bottom: 1rem
+
+.footer__information a,
+.footer__links a
+    color: $slate
+    &:hover, &:focus
+        color: $black
+
+.footer__links
+    display: flex
+    width: 100%
+    border-top: 1px solid darken($light-gray, 5%)
+
+    a
+        flex: 1
+        padding: 1rem
+        border-right: 1px solid darken($light-gray, 5%)
+        text-align: center
+        transition: background-color $transition-timing, color $transition-timing
+        &:hover, &:focus
+            background-color: $light-gray
+            color: $black
+        &:last-child
+            border-right: none
+
++media-query('sm')
+    .footer__content
+        flex-direction: row
+        padding-left: 15px
+        padding-right: 15px
+
+    .footer__copyright,
+    .footer__information
+        padding: 0
+
+    .footer__links
+        display: inline-flex
+        width: auto
+        border-top: none
+
+        a:first-child
+            border-left: 1px solid darken($light-gray, 5%)
+
+        a:last-child
+            border-right: 1px solid darken($light-gray, 5%)
