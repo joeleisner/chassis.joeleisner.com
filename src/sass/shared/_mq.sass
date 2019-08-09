@@ -1,0 +1,12 @@
+// Media queries
+
+$media-query-breakpoint: (sm: 768px, md: 992px, lg: 1200px)
+
+// Calculate min-width media query rule
+@function media-query-min-width($breakpoint)
+    @return "min-width:" + map-get($media-query-breakpoint, $breakpoint)
+
+// Generate media query
+=media-query($breakpoint)
+    @media (media-query-min-width($breakpoint))
+        @content
