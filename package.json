@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "chassis.joeleisner.com",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "The official documentation for chassis.css",
+  "version": "4.0.0",
+  "author": "Joel Eisner <jeisner93@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
     "@fortawesome/free-brands-svg-icons": "^5.10.1",
@@ -35,24 +35,20 @@
     "eslint-plugin-react": "^7.14.3",
     "prettier": "^1.18.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "serve": "gatsby serve"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/joeleisner/chassis.joeleisner.com"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/joeleisner/chassis.joeleisner.com/issues"
   },
   "browserslist": "last 2 versions and > 0% and not dead"
 }
