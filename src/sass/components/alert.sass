@@ -1,0 +1,46 @@
+// Alert
+
+@import "../shared/colors";
+@import "../shared/effects";
+
+.alert
+    display: flex
+    margin-bottom: 1rem
+    border: 1px solid darken($light-gray, 5%)
+    border-radius: $border-radius
+    box-shadow: $drop-shadow
+    overflow: hidden
+
+.alert__icon
+    display: flex
+    align-items: center
+    border-right: 1px solid darken($light-gray, 5%)
+    font-size: 1.75rem
+    background-color: $slate
+    color: $white
+
+.alert__icon--info
+    background-color: $blue
+
+.alert__icon--warning
+    background-color: $yellow
+    color: $slate
+
+.alert__icon--danger
+    background-color: $red
+
+.alert__icon--success
+    background-color: $green
+
+.alert__icon, .alert__content
+    padding: 1rem
+
+.alert__content
+
+    *:first-child
+        margin-top: 0
+        padding-top: 0
+
+    *:last-child
+        margin-bottom: 0
+        padding-bottom: 0
