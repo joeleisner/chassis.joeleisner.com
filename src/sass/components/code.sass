@@ -1,0 +1,54 @@
+// Code
+
+@import "../shared/animations"
+@import "../shared/colors"
+@import "../shared/effects"
+
+.code
+    position: relative
+    width: 100%
+    margin-bottom: 1rem
+    border: 1px solid darken($light-gray, 5%)
+    border-radius: $border-radius
+    overflow: hidden
+    box-shadow: $drop-shadow
+
+    .code__example
+        padding: 1rem
+        overflow: hidden
+
+        .container
+            width: 100%
+
+        .row
+            margin-left: -1rem
+            margin-right: -1rem
+
+        [class*='col']
+            align-items: center
+            padding-top: 15px
+            padding-bottom: 15px
+            border: 1px solid darken($light-gray, 10%)
+            background-color: $light-gray
+            color: $black
+
+    .code__copy
+        position: absolute
+        right: 0
+        padding: 1rem
+        border: none
+        border-bottom-left-radius: $border-radius
+        background-color: transparent
+        font-size: 1rem
+        font-weight: bold
+        line-height: 1
+        color: $white
+        transition: background-color $transition-timing
+        &:hover, &:focus
+            background-color: $black
+
+    .code__snippet
+        margin-bottom: 0
+
+    .code__example + .code__snipet
+        border-top: 1px solid $light-gray
