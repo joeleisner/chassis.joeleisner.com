@@ -1,0 +1,39 @@
+// Index page
+
+@import "../shared/animations"
+@import "../shared/colors"
+@import "../shared/effects"
+
+.index__buttons
+    display: flex
+    margin-bottom: 1rem
+
+    a
+        display: inline-flex
+        align-items: center
+        margin-right: .5rem
+        padding: .75rem 1rem
+        border-width: 1px
+        border-style: solid
+        border-radius: $border-radius
+        font-weight: bold
+        text-decoration: none
+        transition: background-color $transition-timing, color $transition-timing
+
+        svg
+            margin-right: .5rem
+
+.index__download-button
+    border-color: darken($light-gray, 5%)
+    background-color: $white
+    color: $slate
+    box-shadow: $drop-shadow
+    &:hover, &:focus
+        background-color: $light-gray
+        color: $black
+
+.index__github-button
+    border-color: transparent
+    color: $white
+    &:hover, &:focus
+        background-color: rgba($black, .2)
