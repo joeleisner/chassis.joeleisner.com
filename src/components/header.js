@@ -25,7 +25,7 @@ class Header extends React.Component {
         const {
                 title,
                 version,
-                paths,
+                navigation,
                 children
             }          = this.props,
             navClasses = [ 'header__nav', (this.state.open ? 'open' : '') ].filter(Boolean).join(' ');
@@ -50,7 +50,7 @@ class Header extends React.Component {
                                             onClick={ this.toggleNav.bind(this) }><Icon icon={ this.state.open ? faTimes : faBars } /></button>
                                     </div>
                                     <nav id="header__nav" className={ navClasses }>
-                                        { paths.map(({ path, name }) => <Link to={ path } key={ path }>{ name }</Link>) }
+                                        { navigation.map(({ path, name }) => <Link to={ path } key={ path }>{ name }</Link>) }
                                     </nav>
                                 </div>
                             </div>

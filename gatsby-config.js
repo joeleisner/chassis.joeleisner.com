@@ -4,7 +4,21 @@ module.exports = {
         description: 'A minimalistic grid & typography CSS framework',
         author: '@joeleisner',
         version: '4.0.0',
-        siteUrl: 'https://chassis.joeleisner.com'
+        siteUrl: 'https://chassis.joeleisner.com',
+        navigation: [
+            {
+                name: 'Reset',
+                path: '/reset'
+            },
+            {
+                name: 'Grid',
+                path: '/grid'
+            },
+            {
+                name: 'Utilities',
+                path: '/utilities'
+            }
+        ]
     },
     plugins: [
         'gatsby-plugin-react-helmet',

@@ -13,33 +13,24 @@ const Layout = ({ summary, children }) => {
             site {
                 siteMetadata {
                     title,
-                    version
-                }
-            },
-            allSitePage(filter: {path: {regex: "/^((?!404).)*$/"}}) {
-                edges {
-                    node {
+                    version,
+                    navigation {
+                        name,
                         path
                     }
                 }
             }
         }
-    `);
-
-    const { title, version } = data.site.siteMetadata,
-        paths = data.allSitePage.edges
-            .map(edge => edge.node.path)
-            .filter(path => path !== '/')
-            .map(path => {
-                const name = path
-                    .replace(/\//g, '')
-                    .replace(/(?:^|\s)\S/g, char => char.toUpperCase());
-                return { path, name };
-            });
+    `),
+        {
+            title,
+            version,
+            navigation
+        } = data.site.siteMetadata;
 
     return (
         <div className="site">
-            <Header title={ title } version={ version } paths={ paths }>{ typeof summary === 'function' ? summary() : summary }</Header>
+            <Header title={ title } version={ version } navigation={ navigation }>{ typeof summary === 'function' ? summary() : summary }</Header>
             <div className="site__content">
                 <div className="container">
                     <div className="row">
