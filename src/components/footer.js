@@ -16,7 +16,7 @@ const Footer = () => (
                     <div className="footer__information">
                         Made with
                         { ' ' }
-                        <Icon icon={ faHeart } text="love" />
+                        <Icon icon={ faHeart } style={{ width: '1rem' }} text="love" />
                         { ' using ' }
                         <strong>chassis.css</strong>
                         { ' and ' }
