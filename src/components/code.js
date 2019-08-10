@@ -37,12 +37,14 @@ class Code extends React.Component {
         return (
             <div className="code">
                 { example ? this.state.example : '' }
-                <CopyToClipboard text={ children } onCopy={ this.onCopy.bind(this) }>
-                    <button className="code__copy">{ this.state.copied ? 'Copied!' : 'Copy' }</button>
-                </CopyToClipboard>
-                <SyntaxHighlighter className="code__snippet" language={ language } style={ Dark } customStyle={{ padding: '1rem' }} { ...props }>
-                    { children }
-                </SyntaxHighlighter>
+                <div class="code__snippet">
+                    <CopyToClipboard text={ children } onCopy={ this.onCopy.bind(this) }>
+                        <button className="code__copy">{ this.state.copied ? 'Copied!' : 'Copy' }</button>
+                    </CopyToClipboard>
+                    <SyntaxHighlighter className="code__syntax" language={ language } style={ Dark } customStyle={{ padding: '1rem' }} { ...props }>
+                        { children }
+                    </SyntaxHighlighter>
+                </div>
             </div>
         );
     }
