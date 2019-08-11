@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
-import Footer from './footer';
+import Header      from './header';
+import Footer      from './footer';
+import ScrollToTop from './scrolltotop';
 
 import '../sass/components/layout.sass';
 
@@ -35,7 +36,10 @@ const Layout = ({ summary, children }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <main>{ children }</main>
+                            <main>
+                                { children }
+                                <ScrollToTop />
+                            </main>
                         </div>
                     </div>
                 </div>
