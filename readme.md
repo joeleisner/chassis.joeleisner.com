@@ -1,4 +1,4 @@
-<p align="center"><img alt="Gatsby" src="src/images/icon.png?raw=true" width="60" /></p>
+<p align="center"><img alt="Chassis.css icon" src="src/images/icon.png?raw=true" width="60" /></p>
 <h1 align="center">Chassis.css Documentation Wesbite</h1>
 
 The official documentation for chassis.css. Built using [Gatsby](https://www.gatsbyjs.org).
