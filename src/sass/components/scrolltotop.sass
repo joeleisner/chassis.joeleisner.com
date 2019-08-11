@@ -1,0 +1,26 @@
+// Scroll to top
+
+@import "../shared/animations"
+@import "../shared/colors"
+@import "../shared/effects"
+
+.scroll-to-top
+    position: fixed
+    bottom: 1rem
+    right: -3.75rem
+    width: 3.75rem
+    height: 3.75rem
+    border: 1px solid darken($chassis-purple, 5%)
+    border-radius: 100%
+    background-color: $chassis-purple
+    font-size: 2rem
+    line-height: 1
+    color: $white
+    transition: right $transition-timing, background-color $transition-timing
+    box-shadow: $drop-shadow
+    &:hover, &:focus
+        background-color: darken($chassis-purple, 5%)
+
+.scroll-to-top:focus,
+.scroll-to-top--visible
+    right: 1rem
