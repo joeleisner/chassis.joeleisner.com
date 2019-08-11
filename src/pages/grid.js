@@ -106,7 +106,7 @@ const IndexPage = () => (
 </div>`}</Code>
         <p>In the above example, the first column is aligned to the top of the row, the second column is aligned to the middle of the row, and the third column is aligned to the bottom of the row.</p>
         <Alert type="warning">
-            <p>Due to how flexbox works, vertical column alignments will become horizontal column alignments when the viewport is less than 768px.</p>
+            <p>Due to rows and flexbox works, vertical column alignments will become horizontal column alignments when the viewport is less than 768px.</p>
         </Alert>
         <h3>Horizontal column alignment</h3>
         <p>Columns can also be vertically aligned using the "justify content" modifier classes. These are added to the row and follow the <code>.jc-*</code> class structure, where <code>*</code> is one of the following letters:</p>
@@ -147,7 +147,7 @@ const IndexPage = () => (
 </div>`}</Code>
         <p>In the above example, each row has one of the possible "justify content" modifer classes on it.</p>
         <Alert type="warning">
-            <p>Due to how flexbox works, horizontal column alignments will become vertical column alignments when the viewport is less than 768px.</p>
+            <p>Due to how rows and flexbox works, horizontal column alignments will become vertical column alignments when the viewport is less than 768px.</p>
         </Alert>
         <h2>Column offsets</h2>
         <p>Columns can be offset from the start of a row or from a column to the left of itself using the "offset" modifier classes. These are added to a column and follow the <code>.os-*</code> class structure, where <code>*</code> is one of the following:</p>
