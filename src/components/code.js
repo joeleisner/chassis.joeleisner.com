@@ -37,7 +37,7 @@ class Code extends React.Component {
         return (
             <div className="code">
                 { example ? this.state.example : '' }
-                <div class="code__snippet">
+                <div className="code__snippet">
                     <CopyToClipboard text={ children } onCopy={ this.onCopy.bind(this) }>
                         <button className="code__copy">{ this.state.copied ? 'Copied!' : 'Copy' }</button>
                     </CopyToClipboard>
