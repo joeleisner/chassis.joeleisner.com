@@ -1,5 +1,5 @@
 import React                 from 'react';
-import { faArrowCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleDown, faBook } from '@fortawesome/free-solid-svg-icons';
 import { faGithub }          from '@fortawesome/free-brands-svg-icons';
 
 import Code         from '../components/code';
@@ -10,20 +10,36 @@ import SEO          from '../components/seo';
 
 import '../sass/pages/index.sass';
 
+const title     = 'Chassis.css',
+    tagline     = 'A minimalistic grid & typography CSS framework.',
+    description = 'Chassis.css provides easy-to-use and lightweight styling with practical defaults without being too opinionated.';
+
 const Summary = () => (
     <>
-        <h1>A minimalistic grid & typography CSS framework.</h1>
-        <p>Chassis.css provides easy-to-use and lightweight styling with practical defaults without being too opinionated.</p>
+        <h1>{ tagline }</h1>
+        <p>{ description }</p>
         <div className="index__buttons">
-            <ExternalLink href="https://github.com/joeleisner/chassis-css/releases" className="index__download-button"><Icon icon={ faArrowCircleDown } />Download</ExternalLink>
-            <ExternalLink href="https://github.com/joeleisner/chassis-css" className="index__github-button"><Icon icon={ faGithub } />GitHub</ExternalLink>
+            <ExternalLink
+                href="https://github.com/joeleisner/chassis-css/releases"
+                title="Chassis.css GitHub releases"
+                className="index__button index__button--highlight"><Icon icon={ faArrowCircleDown } />Download</ExternalLink>
+            <ExternalLink
+                href="https://github.com/joeleisner/chassis-css"
+                title="Chassis.css GitHub"
+                className="index__button"><Icon icon={ faGithub } />GitHub</ExternalLink>
+            <ExternalLink
+                href="http://joeleisner.com/chassis"
+                title="Chassis.css v3.0.2 documentation"
+                className="index__button"><Icon icon={ faBook } />v3.0.2<span className="sr">documentation</span></ExternalLink>
         </div>
     </>
 );
 
 const IndexPage = () => (
     <Layout summary={ Summary }>
-        <SEO title="Chassis.css" />
+        <SEO
+            title={ title }
+            description={ [ tagline, description ].join(' ') } />
         <h2>Changelog</h2>
         <p>Chassis.css has been overhauled from the ground up to support some killer new features. Here's what you can look forward to:</p>
         <ul>

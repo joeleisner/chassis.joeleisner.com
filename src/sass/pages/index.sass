@@ -8,21 +8,24 @@
     display: flex
     margin-bottom: 1rem
 
-    a
-        display: inline-flex
-        align-items: center
-        padding: .75rem 1rem
-        border-width: 1px
-        border-style: solid
-        border-radius: $border-radius
-        font-weight: bold
-        text-decoration: none
-        transition: background-color $transition-timing, color $transition-timing
+.index__button
+    display: inline-flex
+    align-items: center
+    padding: .75rem 1rem
+    border: 1px solid transparent
+    border-radius: $border-radius
+    font-weight: bold
+    text-decoration: none
+    color: $white
+    transition: background-color $transition-timing, color $transition-timing
+    &:hover, &:focus
+        background-color: rgba($black, .2)
 
-        svg
-            margin-right: .5rem
+    svg
+        margin-right: .5rem
 
-.index__download-button
+.index__button--highlight
+    margin-right: 1rem
     border-color: darken($light-gray, 5%)
     background-color: $white
     color: $slate
@@ -30,9 +33,3 @@
     &:hover, &:focus
         background-color: $light-gray
         color: $black
-
-.index__github-button
-    border-color: transparent
-    color: $white
-    &:hover, &:focus
-        background-color: rgba($black, .2)
