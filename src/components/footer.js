@@ -23,14 +23,14 @@ const Footer = () => (
                         <ExternalLink href="https://www.gatsbyjs.org">Gatsby</ExternalLink>
                     </div>
                     <nav className="footer__links">
-                        <ExternalLink href="http://www.joeleisner.com/">
+                        <ExternalLink href="http://www.joeleisner.com/" title="Joel Eisner's main website">
                             <Icon icon={ faHome } text="Joel Eisner's main website" />
                         </ExternalLink>
-                        <ExternalLink href="https://www.twitter.com/joeleisner">
+                        <ExternalLink href="https://www.twitter.com/joeleisner" title="Joel Eisner's twitter page">
                             <Icon icon={ faTwitter } text="Joel Eisner's twitter page" />
                         </ExternalLink>
-                        <ExternalLink href="https://www.github.com/joeleisner">
-                            <Icon icon={ faGithub } text="Joel Eisner's github page" />
+                        <ExternalLink href="https://www.github.com/joeleisner" title="Joel Eisner's GitHub page">
+                            <Icon icon={ faGithub } text="Joel Eisner's GitHub page" />
                         </ExternalLink>
                     </nav>
                 </div>
