@@ -22,6 +22,9 @@
     transition: background-color $transition-timing, color $transition-timing
     &:hover, &:focus
         background-color: rgba($black, .2)
+        color: $white
+    &:visited
+        color: $white
 
     svg
         margin-right: .5rem
@@ -34,6 +37,8 @@
     &:hover, &:focus
         background-color: $light-gray
         color: $black
+    &:visited
+        color: $slate
 
 +media-query('sm')
     .index__buttons

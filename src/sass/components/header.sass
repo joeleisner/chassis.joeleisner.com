@@ -53,8 +53,9 @@
         color: $white
         transition: opacity $transition-timing
         &:hover, &:focus
-            text-decoration: underline
             opacity: .8
+        &:visited
+            color: $white
 
     p
         margin-bottom: 0
@@ -91,6 +92,9 @@
     &:hover, &:focus
         background-color: rgba($black, .2)
         text-decoration: none
+        color: $white
+    &:visited
+        color: $white
 
 .header__nav-link--active
     background-color: $white
@@ -100,6 +104,8 @@
         background-color: $light-gray
         text-decoration: none
         color: $black
+    &:visited
+        color: $slate
 
 .header__summary p
     line-height: 1.5

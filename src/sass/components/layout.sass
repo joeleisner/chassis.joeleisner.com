@@ -10,6 +10,16 @@ body
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans ,Ubuntu, Cantarell, "Helvetica Neue", sans-serif
     color: $slate
 
+a
+    color: $blue
+    transition: color $transition-timing
+    &:hover
+        color: darken($blue, 10%)
+    &:focus
+        color: $red
+    &:visited
+        color: $purple
+
 *:not(pre) > code
     padding: .025rem .25rem
     border-radius: $border-radius
