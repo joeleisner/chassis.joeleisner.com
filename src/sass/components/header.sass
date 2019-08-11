@@ -82,23 +82,24 @@
         flex-direction: column
         width: 100%
 
-    a
-        padding: .5rem
-        border-radius: $border-radius
+.header__nav-link
+    padding: .5rem
+    border-radius: $border-radius
+    text-decoration: none
+    color: $white
+    transition: background-color $transition-timing, color $transition-timing
+    &:hover, &:focus
+        background-color: rgba($black, .2)
         text-decoration: none
-        color: $white
-        transition: background-color $transition-timing, color $transition-timing
-        &:hover, &:focus
-            background-color: rgba($black, .2)
-            text-decoration: none
-        &[aria-current="page"]
-            background-color: $white
-            color: $slate
-            box-shadow: $drop-shadow
-            &:hover, &:focus
-                background-color: $light-gray
-                text-decoration: none
-                color: $black
+
+.header__nav-link--active
+    background-color: $white
+    color: $slate
+    box-shadow: $drop-shadow
+    &:hover, &:focus
+        background-color: $light-gray
+        text-decoration: none
+        color: $black
 
 .header__summary p
     line-height: 1.5
@@ -127,9 +128,8 @@
         flex-direction: row
         width: auto
 
-    .header__nav
-        a
-            padding: .25rem .5rem
+    .header__nav-link
+        padding: .25rem .5rem
 
 +media-query('md')
     .header__level-wrapper:after

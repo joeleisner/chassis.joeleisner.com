@@ -50,7 +50,7 @@ class Header extends React.Component {
                                             onClick={ this.toggleNav.bind(this) }><Icon icon={ this.state.open ? faTimes : faBars } /></button>
                                     </div>
                                     <nav id="header__nav" className={ navClasses }>
-                                        { navigation.map(({ path, name }) => <Link to={ path } key={ path }>{ name }</Link>) }
+                                        { navigation.map(({ path, name }) => <Link to={ path } className="header__nav-link" activeClassName="header__nav-link--active" partiallyActive={ true } key={ path }>{ name }</Link>) }
                                     </nav>
                                 </div>
                             </div>
