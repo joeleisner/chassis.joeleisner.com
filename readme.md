@@ -1,7 +1,7 @@
 <p align="center"><img alt="Chassis.css icon" src="src/images/icon.png?raw=true" width="60" /></p>
 <h1 align="center">Chassis.css Documentation Wesbite</h1>
 
-The official documentation for chassis.css. Built using [Gatsby](https://www.gatsbyjs.org).
+The official documentation website for chassis.css. Built using [Gatsby](https://www.gatsbyjs.org).
 
 ## Installation
 ```shell
