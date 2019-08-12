@@ -4,9 +4,10 @@ import Alert  from '../components/alert';
 import Code   from '../components/code';
 import Layout from '../components/layout';
 import SEO    from '../components/seo';
+import ExternalLink from '../components/externallink';
 
 const title     = 'Grid system',
-    description = 'The chassis.css grid system uses a powerful, mobile-first, and flexbox-based 12-column layout. With no breakpoints to memorize and simple adjustment classes, it\'s very easy to get started!';
+    description = 'The chassis.css grid system uses a powerful, mobile-first, and flexbox-based 12-column layout. With no breakpoints to memorize and simple adjustment classes, it\'s very easy to get started.';
 
 const Summary = () => (
     <>
@@ -84,18 +85,21 @@ const IndexPage = () => (
         <h3>Vertical column alignment</h3>
         <p>First, let's see how we can vertically align all columns within a row:</p>
         <Code>{`<div class="container">
-    <div class="row ai-c" style="height: 200px;">
+    <div class="row ai-c ac-c" style="height: 200px;">
         <div class="col-4">.col-4</div>
         <div class="col-4">.col-4</div>
         <div class="col-4">.col-4</div>
     </div>
 </div>`}</Code>
-        <p>In the above example, we are aligning the columns in the center of a row that has been manually set to 200px tall using the "align items" modifier classes. This is added to the row and follows the <code>.ai-*</code> class structure, where <code>*</code> can be one of the following letters:</p>
+        <p>In the above example, we are aligning the columns in the center of a row that has been manually set to 200px tall using one of the "align items" modifier classes and one of the "align content" modifier classes. This is added to the row and follows the <code>.ai-*</code> (align items) and <code>.ac-*</code> (align content) class structure, where <code>*</code> can be one of the following letters:</p>
         <ul>
             <li><code>s</code> means "start" and aligns columns to the top of the row.</li>
             <li><code>c</code> means "center" and aligns columns to the vertical-middle of the row.</li>
             <li><code>e</code> means "end" and aligns columns to the bottom of the row.</li>
         </ul>
+        <Alert>
+            <p>If you're confused about the differences between the "align items" modifier classes (which uses the flexbox <code>align-items</code> rule) and the "align content" modifier classes (which uses the flexbox <code>align-content</code> rule), check out this handy <ExternalLink href="https://medium.com/@wendersyang/what-the-flex-is-the-difference-between-justify-content-align-items-and-align-content-5fd3694f5259" title="What the flex is the difference between justify-content, align-items, and align-content?!">Medium article by Wendy Yang</ExternalLink>.</p>
+        </Alert>
         <p>There's also the "align self" modifier classes. These are added to a column, independently affecting its vertical alignment, and follow the <code>.as-*</code> class structure, where <code>*</code> can be one of the letters in the list above.</p>
         <Code>{`<div class="container">
     <div class="row" style="height: 200px;">
@@ -105,9 +109,6 @@ const IndexPage = () => (
     </div>
 </div>`}</Code>
         <p>In the above example, the first column is aligned to the top of the row, the second column is aligned to the middle of the row, and the third column is aligned to the bottom of the row.</p>
-        <Alert type="warning">
-            <p>Due to rows and flexbox works, vertical column alignments will become horizontal column alignments when the viewport is less than 768px.</p>
-        </Alert>
         <h3>Horizontal column alignment</h3>
         <p>Columns can also be vertically aligned using the "justify content" modifier classes. These are added to the row and follow the <code>.jc-*</code> class structure, where <code>*</code> is one of the following letters:</p>
         <ul>
@@ -146,9 +147,6 @@ const IndexPage = () => (
     </div>
 </div>`}</Code>
         <p>In the above example, each row has one of the possible "justify content" modifer classes on it.</p>
-        <Alert type="warning">
-            <p>Due to how rows and flexbox works, horizontal column alignments will become vertical column alignments when the viewport is less than 768px.</p>
-        </Alert>
         <h2>Column offsets</h2>
         <p>Columns can be offset from the start of a row or from a column to the left of itself using the "offset" modifier classes. These are added to a column and follow the <code>.os-*</code> class structure, where <code>*</code> is one of the following:</p>
         <ul>
