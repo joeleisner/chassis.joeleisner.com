@@ -92,7 +92,7 @@ const IndexPage = () => (
         <p>
             In the above example, there are 6 paragraph elements styled to look
             like <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>.
-            Heading classes folow the <code>.h*</code> class structure, where{' '}
+            Heading classes follow the <code>.h*</code> class structure, where{' '}
             <code>*</code> can be a number between 1 and 6.
         </p>
         <Alert>

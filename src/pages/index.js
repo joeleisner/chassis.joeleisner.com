@@ -189,7 +189,7 @@ const IndexPage = () => (
                 <ul>
                     <li>
                         These classes are now constructable, allowing you to
-                        target all/specfic sides, add negative/positive
+                        target all/specific sides, add negative/positive
                         adjustments, and utilize 6 levels of adjustments.
                     </li>
                 </ul>

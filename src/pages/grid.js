@@ -7,8 +7,7 @@ import SEO from '../components/seo';
 import ExternalLink from '../components/externallink';
 
 const title = 'Grid system',
-    description =
-        "The chassis.css grid system uses a powerful, mobile-first, and flexbox-based 12-column layout. With no breakpoints to memorize and simple adjustment classes, it's very easy to get started.";
+    description = 'The chassis.css grid system uses a powerful, mobile-first, and flexbox-based 12-column layout. With no breakpoints to memorize and simple adjustment classes, it\'s very easy to get started.';
 
 const Summary = () => (
     <>
@@ -118,7 +117,7 @@ const IndexPage = () => (
 </div>`}</Code>
         <p>
             In the above example, we have nested 3 layers of rows under various
-            arangements or columns without affecting the left or right alignment
+            arrangements or columns without affecting the left or right alignment
             of the text inside.
         </p>
         <h2>Column alignment</h2>
@@ -255,7 +254,7 @@ const IndexPage = () => (
 </div>`}</Code>
         <p>
             In the above example, each row has one of the possible "justify
-            content" modifer classes on it.
+            content" modifier classes on it.
         </p>
         <h2>Column offsets</h2>
         <p>
@@ -290,11 +289,11 @@ const IndexPage = () => (
 </div>`}</Code>
         <p>
             In the above example, the first row has two columns each taking up 4
-            of the avilable 12 column width with the second column automatically
-            offseting it from the first; <code>12 - (4 + 4) = 4</code>, so the
+            of the available 12 column width with the second column automatically
+            offsetting it from the first; <code>12 - (4 + 4) = 4</code>, so the
             offset is automatically taking up 4 of the available 12 column
             width. The second row has 3 columns each taking up 2 of the
-            available 12 column width with the second and third offseting itself
+            available 12 column width with the second and third offsetting itself
             from the previous by 3 of the available 12 column width;{' '}
             <code>2 + 3 + 2 + 3 + 2 = 12</code>.
         </p>
@@ -332,7 +331,7 @@ const IndexPage = () => (
         <p>
             In the above example, the first row has columns that are rendered in
             reverse order despite the order they were placed. The second row is
-            doing the same as the first row, except this reording will be reset
+            doing the same as the first row, except this reordering will be reset
             when the viewport is less than 768px wide.
         </p>
         <h3>Row reversing</h3>
