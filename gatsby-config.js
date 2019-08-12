@@ -5,6 +5,7 @@ module.exports = {
         author: '@joeleisner',
         version: '4.0.0',
         siteUrl: 'https://chassis.joeleisner.com',
+        defaultImage: '/images/thumbnail.png',
         navigation: [
             {
                 name: 'Reset',
