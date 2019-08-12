@@ -66,7 +66,23 @@ const IndexPage = () => (
                 </div>
             </div>
         </div>
+        <h2>Installation</h2>
+        <Code language="shell" example={ false }>npm install chassis-css</Code>
         <h2>Changelog</h2>
+        <h3>4.0.1</h3>
+        <p>This patch brings some much needed stability to the framework after its big release. Here's what to expect:</p>
+        <ul>
+            <li>Rows no longer change their <code>flex-direction</code> between <code>column</code> on extra small viewports and <code>row</code> on small viewports and above.
+                <ul>
+                    <li>Rows now wrap columns to vertically stack them.</li>
+                    <li>Vertical and horizontal alignment modifier classes no longer flip-flop functionality between extra small and small viewports.</li>
+                    <li>The reverse row modifier class, <code>.row.rev</code>, has been changed.</li>
+                    <li>The way columns fill the row's width on extra small viewports has been changed.</li>
+                </ul>
+            </li>
+            <li>New align content modifier classes, <code>.ac-*</code>, have been added to provide more vertical alignment options.</li>
+        </ul>
+        <h3>4.0.0</h3>
         <p>Chassis.css has been overhauled from the ground up to support some killer new features. Here's what you can look forward to:</p>
         <ul>
             <li>The grid system now uses Flexbox!
@@ -90,8 +106,7 @@ const IndexPage = () => (
                 </ul>
             </li>
         </ul>
-        <h2>Installation</h2>
-        <Code language="shell" example={ false }>npm install chassis-css</Code>
+        <p>Check out the <ExternalLink href="https://github.com/joeleisner/chassis-css/blob/master/changelog.md" title="Chassis.css GitHub changelog">changelog</ExternalLink> for previous release information.</p>
     </Layout>
 );
 
