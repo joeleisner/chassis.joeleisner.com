@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 import SEO    from '../components/seo';
 
 const title     = 'Utility classes',
-    description = 'In addition to its grid system and style resets, chassis.css provides verbose and easy-to-use utility classes to manipulate just about everything. If there\'s something you need to adjust, there\'s probably a utility class for it!';
+    description = 'In addition to its grid system and style resets, chassis.css provides verbose and easy-to-use utility classes to manipulate just about everything. If there\'s something you need to adjust, there\'s probably a utility class for it.';
 
 const Summary = () => (
     <>

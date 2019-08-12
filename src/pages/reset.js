@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 import SEO    from '../components/seo';
 
 const title     = 'Style resets',
-    description = 'The chassis.css style resets provide a minimalistic, versatile, and accessibility focused baseline for elements and typography. With little-to-no extra styling and practical sizes and spacing, it provides a solid foundation!';
+    description = 'The chassis.css style resets provide a minimalistic, versatile, and accessibility focused baseline for elements and typography. With little-to-no extra styling and practical sizes and spacing, it provides a solid foundation.';
 
 const Summary = () => (
     <>
