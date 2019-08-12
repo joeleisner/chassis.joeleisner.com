@@ -2,7 +2,7 @@
   "name": "chassis.joeleisner.com",
   "private": true,
   "description": "The official documentation for chassis.css",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": "Joel Eisner <jeisner93@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
