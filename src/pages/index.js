@@ -1,6 +1,12 @@
-import React                 from 'react';
-import { faArrowCircleDown, faBook } from '@fortawesome/free-solid-svg-icons';
-import { faGithub }          from '@fortawesome/free-brands-svg-icons';
+import React        from 'react';
+import {
+    faArrowCircleDown,
+    faAsterisk,
+    faBook,
+    faExpand,
+    faFeather
+} from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import Code         from '../components/code';
 import ExternalLink from '../components/externallink';
@@ -40,6 +46,26 @@ const IndexPage = () => (
         <SEO
             title={ title }
             description={ [ tagline, description ].join(' ') } />
+        <div className="row">
+            <div className="col">
+                <div className="index__perk">
+                    <h2 className="index__perk-title"><Icon icon={ faExpand } />Expandable</h2>
+                    <p className="index__perk-description">Chassis.css sets out to deliver web developers core features, like a grid system and typography defaults, without too much styling.</p>
+                </div>
+            </div>
+            <div className="col">
+                <div className="index__perk">
+                    <h2 className="index__perk-title"><Icon icon={ faFeather } />Lightweight</h2>
+                    <p className="index__perk-description">At just 1.6KB minified and gzipped, chassis.css has a lot of room for you to add your own touch. No bloat or extras; Just the bare necessities.</p>
+                </div>
+            </div>
+            <div className="col">
+                <div className="index__perk">
+                    <h2 className="index__perk-title"><Icon icon={ faAsterisk } />Modern</h2>
+                    <p className="index__perk-description">Built mobile-first using newer web technologies such as CSS flexbox, chassis.css provides a modern framework for your modern workflow.</p>
+                </div>
+            </div>
+        </div>
         <h2>Changelog</h2>
         <p>Chassis.css has been overhauled from the ground up to support some killer new features. Here's what you can look forward to:</p>
         <ul>
