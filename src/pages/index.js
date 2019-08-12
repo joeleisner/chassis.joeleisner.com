@@ -28,15 +28,15 @@ const Summary = () => (
             <ExternalLink
                 href="https://github.com/joeleisner/chassis-css/releases"
                 title="Chassis.css GitHub releases"
-                className="index__button index__button--highlight"><Icon icon={ faArrowCircleDown } />Download</ExternalLink>
+                className="index__button index__button--highlight"><Icon icon={ faArrowCircleDown } style={{ width: '1em' }} />Download</ExternalLink>
             <ExternalLink
                 href="https://github.com/joeleisner/chassis-css"
                 title="Chassis.css GitHub"
-                className="index__button"><Icon icon={ faGithub } />GitHub</ExternalLink>
+                className="index__button"><Icon icon={ faGithub } style={{ width: '1em' }} />GitHub</ExternalLink>
             <ExternalLink
                 href="http://joeleisner.com/chassis"
                 title="Chassis.css v3.0.2 documentation"
-                className="index__button"><Icon icon={ faBook } />v3.0.2<span className="sr">documentation</span></ExternalLink>
+                className="index__button"><Icon icon={ faBook } style={{ width: '1em' }} />v3.0.2<span className="sr">documentation</span></ExternalLink>
         </div>
     </>
 );
@@ -49,19 +49,19 @@ const IndexPage = () => (
         <div className="row">
             <div className="col">
                 <div className="index__perk">
-                    <h2 className="index__perk-title"><Icon icon={ faExpand } />Expandable</h2>
+                    <h2 className="index__perk-title"><Icon icon={ faExpand } style={{ width: '1.75rem' }} />Expandable</h2>
                     <p className="index__perk-description">Chassis.css sets out to deliver web developers core features, like a grid system and typography defaults, without too much styling.</p>
                 </div>
             </div>
             <div className="col">
                 <div className="index__perk">
-                    <h2 className="index__perk-title"><Icon icon={ faFeather } />Lightweight</h2>
+                    <h2 className="index__perk-title"><Icon icon={ faFeather } style={{ width: '1.75rem' }} />Lightweight</h2>
                     <p className="index__perk-description">At just 1.6KB minified and gzipped, chassis.css has a lot of room for you to add your own touch. No bloat or extras; Just the bare necessities.</p>
                 </div>
             </div>
             <div className="col">
                 <div className="index__perk">
-                    <h2 className="index__perk-title"><Icon icon={ faAsterisk } />Modern</h2>
+                    <h2 className="index__perk-title"><Icon icon={ faAsterisk } style={{ width: '1.75rem' }} />Modern</h2>
                     <p className="index__perk-description">Built mobile-first using newer web technologies such as CSS flexbox, chassis.css provides a modern framework for your modern workflow.</p>
                 </div>
             </div>
