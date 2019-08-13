@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Icon = ({ icon, text, ...props }) => {
-    const hiddenText = text ? <span className="sr">{ text }</span> : '';
+    const hiddenText = text ? <span className="sr">{text}</span> : '';
     return (
         <>
-            <FontAwesomeIcon icon={ icon } { ...props } role="presentation" />
-            { hiddenText }
+            <FontAwesomeIcon icon={icon} {...props} role="presentation" />
+            {hiddenText}
         </>
     );
 };

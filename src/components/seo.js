@@ -32,8 +32,12 @@ function SEO({ description, lang, meta, title, image }) {
     return (
         <Helmet
             htmlAttributes={{ lang }}
-            title={ title }
-            titleTemplate={ title === site.siteMetadata.title ? `${ title } - ${ metaDescription }` : `%s - ${ site.siteMetadata.title }` }
+            title={title}
+            titleTemplate={
+                title === site.siteMetadata.title
+                    ? `${title} - ${metaDescription}`
+                    : `%s - ${site.siteMetadata.title}`
+            }
             meta={[
                 {
                     name: 'description',
@@ -49,7 +53,8 @@ function SEO({ description, lang, meta, title, image }) {
                 },
                 {
                     property: 'og:image',
-                    content: `${ site.siteMetadata.siteUrl }${ image || site.siteMetadata.defaultImage }`
+                    content: `${site.siteMetadata.siteUrl}${image ||
+                        site.siteMetadata.defaultImage}`
                 },
                 {
                     property: 'og:type',
