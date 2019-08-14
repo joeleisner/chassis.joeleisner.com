@@ -37,7 +37,6 @@ const IndexPage = () => (
                 viewport is less than 768px wide.
             </li>
         </ul>
-        <p>Makes sense, right? Let's dive deeper.</p>
         <h3>Fixed width columns</h3>
         <p>
             Columns with fixed widths always follow the <code>.col-*</code>{' '}
@@ -122,7 +121,7 @@ const IndexPage = () => (
         </p>
         <h2>Column alignment</h2>
         <p>
-            Columns can be vertically and horizontally aligned however you like!
+            Columns can be vertically and horizontally aligned however you like.
             This can be done by adding modifier classes to the row itself,
             globally aligning the columns within it, or in some instances to
             individual columns, aligning the column independently of the rest.

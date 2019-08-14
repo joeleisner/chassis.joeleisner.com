@@ -75,7 +75,7 @@ const IndexPage = () => (
         <p>
             Sometimes while not wanting to display text it is important to allow
             folks using screen readers to contextually understand what's going
-            on; This is where screen reader classes come in handy! The following
+            on; This is where screen reader classes come in handy. The following
             are the screen reader classes available:
         </p>
         <ul>
@@ -226,7 +226,7 @@ const IndexPage = () => (
             Sometimes you want to show an element only at a certain viewport
             size, or sometimes you want hide an element at a certain viewport
             size; In both cases, that's where visibility classes come to the
-            rescue!
+            rescue.
         </p>
         <Code>{`<div class="container">
     <div class="row">
@@ -249,7 +249,7 @@ const IndexPage = () => (
             columns is visible. In the second row, each column is set to hide at
             a certain viewport size, hence why only 3 of the 4 columns are
             visible. To get a better visualization of how this works, adjust the
-            width of your browser window!
+            width of your browser window.
         </p>
         <p>
             Visibility classes follow the <code>.$-*</code> class structure,
