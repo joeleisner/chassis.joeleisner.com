@@ -142,7 +142,7 @@ const IndexPage = () => (
         </p>
         <ul>
             <li>
-                The grid system now uses Flexbox!
+                The grid system now uses flexbox.
                 <ul>
                     <li>
                         You can simply use the <code>.col</code> class to

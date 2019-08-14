@@ -6,7 +6,7 @@ import SEO from '../components/seo';
 const Summary = () => (
     <>
         <h1>Page not found.</h1>
-        <p>Uh oh! The page you requested doesn't seem to exist.</p>
+        <p>The page you requested doesn't seem to exist.</p>
     </>
 );
 

@@ -39,7 +39,6 @@ const IndexPage = () => (
                 bottom margins.
             </li>
         </ul>
-        <p>Pretty practical, right? Let's check it out.</p>
         <h2>Headings</h2>
         <p>
             Heading styles are provided for <code>&lt;h1&gt;</code> through{' '}

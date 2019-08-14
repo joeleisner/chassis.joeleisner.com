@@ -48,7 +48,7 @@ class Code extends React.Component {
                         onCopy={this.onCopy.bind(this)}
                     >
                         <button className="code__copy">
-                            {this.state.copied ? 'Copied!' : 'Copy'}
+                            {this.state.copied ? 'Copied' : 'Copy'}
                         </button>
                     </CopyToClipboard>
                     <SyntaxHighlighter
