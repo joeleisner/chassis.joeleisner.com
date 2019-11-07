@@ -5,7 +5,7 @@
 @import "../shared/effects"
 @import "../shared/mq"
 
-\:root
+=index--theme-light
     --index__button--highlight-border-color: #{darken($light-gray, 5%)}
     --index__button--highlight-background-color: #{$white}
     --index__button--highlight-color: #{$slate}
@@ -14,15 +14,27 @@
     --index__perk-border-color: #{darken($light-gray, 5%)}
     --index__perk-background-color: #{$white}
 
+=index--theme-dark
+    --index__button--highlight-border-color: #{$black}
+    --index__button--highlight-background-color: #{darken($slate, 5%)}
+    --index__button--highlight-color: #{$white}
+    --index__button--highlight-hover-focus-background-color: #{darken($slate, 10%)}
+    --index__button--highlight-hover-focus-color: #{$white}
+    --index__perk-border-color: #{darken($slate, 10%)}
+    --index__perk-background-color: #{darken($slate, 5%)}
+
+\:root
+    +index--theme-light
+
 +color-scheme(dark)
     \:root
-        --index__button--highlight-border-color: #{$black}
-        --index__button--highlight-background-color: #{darken($slate, 5%)}
-        --index__button--highlight-color: #{$white}
-        --index__button--highlight-hover-focus-background-color: #{darken($slate, 10%)}
-        --index__button--highlight-hover-focus-color: #{$white}
-        --index__perk-border-color: #{darken($slate, 10%)}
-        --index__perk-background-color: #{darken($slate, 5%)}
+        +index--theme-dark
+
+[data-theme="light"]
+    +index--theme-light
+
+[data-theme="dark"]
+    +index--theme-dark
 
 .index__buttons
     display: flex

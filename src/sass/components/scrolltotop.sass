@@ -5,14 +5,26 @@
 @import "../shared/effects"
 @import "../shared/mq"
 
-\:root
+=scrolltotop--theme-light
     --scrolltotop-border-color: #{darken($chassis-purple, 5%)}
     --scrolltotop-background-color: #{$chassis-purple}
 
+=scrolltotop--theme-dark
+    --scrolltotop-border-color: #{darken($chassis-purple, 15%)}
+    --scrolltotop-background-color: #{darken($chassis-purple, 10%)}
+
+\:root
+    +scrolltotop--theme-light
+
 +color-scheme(dark)
     \:root
-        --scrolltotop-border-color: #{darken($chassis-purple, 15%)}
-        --scrolltotop-background-color: #{darken($chassis-purple, 10%)}
+        +scrolltotop--theme-dark
+
+[data-theme="light"]
+    +scrolltotop--theme-light
+
+[data-theme="dark"]
+    +scrolltotop--theme-dark
 
 .scroll-to-top
     position: fixed

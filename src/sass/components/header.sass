@@ -5,16 +5,28 @@
 @import "../shared/effects"
 @import "../shared/mq"
 
-\:root
+=header--theme-light
     --header-background-purple: #{$chassis-purple}
     --header-background-blue: #{$chassis-blue}
     --header__wave-fill: #{$white}
 
+=header--theme-dark
+    --header-background-purple: #{darken($chassis-purple, 10%)}
+    --header-background-blue: #{darken($chassis-blue, 10%)}
+    --header__wave-fill: #{$black}
+
+\:root
+    +header--theme-light
+
 +color-scheme(dark)
     \:root
-        --header-background-purple: #{darken($chassis-purple, 10%)}
-        --header-background-blue: #{darken($chassis-blue, 10%)}
-        --header__wave-fill: #{$black}
+        +header--theme-dark
+
+[data-theme="light"]
+    +header--theme-light
+
+[data-theme="dark"]
+    +header--theme-dark
 
 .header
     margin-bottom: 1rem

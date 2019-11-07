@@ -4,7 +4,7 @@
 @import "../shared/effects"
 @import "../shared/mq"
 
-\:root
+=alert--theme-light
     --alert-border-color: #{darken($light-gray, 5%)}
     --alert-background-color: #{$white}
     --alert__icon--info-background-color: #{$blue}
@@ -12,14 +12,26 @@
     --alert__icon--danger-background-color: #{$red}
     --alert__icon--success-background-color: #{$green}
 
+=alert--theme-dark
+    --alert-border-color: #{darken($slate, 10%)}
+    --alert-background-color: #{darken($slate, 5%)}
+    --alert__icon--info-background-color: #{darken($blue, 5%)}
+    --alert__icon--warning-background-color: #{darken($yellow, 5%)}
+    --alert__icon--danger-background-color: #{darken($red, 5%)}
+    --alert__icon--success-background-color: #{darken($green, 5%)}
+
+\:root
+    +alert--theme-light
+
 +color-scheme(dark)
     \:root
-        --alert-border-color: #{darken($slate, 10%)}
-        --alert-background-color: #{darken($slate, 5%)}
-        --alert__icon--info-background-color: #{darken($blue, 5%)}
-        --alert__icon--warning-background-color: #{darken($yellow, 5%)}
-        --alert__icon--danger-background-color: #{darken($red, 5%)}
-        --alert__icon--success-background-color: #{darken($green, 5%)}
+        +alert--theme-dark
+
+[data-theme="light"]
+    +alert--theme-light
+
+[data-theme="dark"]
+    +alert--theme-dark
 
 .alert
     display: flex

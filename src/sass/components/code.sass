@@ -5,21 +5,32 @@
 @import "../shared/effects"
 @import "../shared/mq"
 
-\:root
+=code--theme-light
     --code-border-color: #{darken($light-gray, 5%)}
     --code__example-background-color: #{$white}
     --code__example-col-border-color: #{darken($light-gray, 10%)}
     --code__example-col-background-color: #{$light-gray}
     --code__example-col-color: #{$black}
 
+=code--theme-dark
+    --code-border-color: #{darken($slate, 10%)}
+    --code__example-background-color: #{darken($slate, 5%)}
+    --code__example-col-border-color: #{$black}
+    --code__example-col-background-color: #{darken($slate, 10%)}
+    --code__example-col-color: #{$white}
+
+\:root
+    +code--theme-light
+
 +color-scheme(dark)
     \:root
-        --code-border-color: #{darken($slate, 10%)}
-        --code__example-background-color: #{darken($slate, 5%)}
-        --code__example-col-border-color: #{$black}
-        --code__example-col-background-color: #{darken($slate, 10%)}
-        --code__example-col-color: #{$white}
+        +code--theme-dark
 
+[data-theme="light"]
+    +code--theme-light
+
+[data-theme="dark"]
+    +code--theme-dark
 
 .code
     width: 100%

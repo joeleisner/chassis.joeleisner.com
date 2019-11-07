@@ -7,7 +7,7 @@
 
 @import "../../../node_modules/chassis-css/dist/sass/_chassis.sass"
 
-\:root
+=layout--theme-light
     --layout-body-background-color: #{$white}
     --layout-body-color: #{$slate}
     --layout-link-color: #{$blue}
@@ -16,15 +16,27 @@
     --layout-code-background-color: #{darken($light-gray, 5%)}
     --layout-code-color: #{$black}
 
+=layout--theme-dark
+    --layout-body-background-color: #{$black}
+    --layout-body-color: #{$white}
+    --layout-link-color: #{lighten($blue, 10%)}
+    --layout-link-hover-color: #{$blue}
+    --layout-link-focus-color: #{lighten($red, 10%)}
+    --layout-code-background-color: #{$slate}
+    --layout-code-color: #{$white}
+
+\:root
+    +layout--theme-light
+
 +color-scheme(dark)
     \:root
-        --layout-body-background-color: #{$black}
-        --layout-body-color: #{$white}
-        --layout-link-color: #{lighten($blue, 10%)}
-        --layout-link-hover-color: #{$blue}
-        --layout-link-focus-color: #{lighten($red, 10%)}
-        --layout-code-background-color: #{$slate}
-        --layout-code-color: #{$white}
+        +layout--theme-dark
+
+[data-theme="light"]
+    +layout--theme-light
+
+[data-theme="dark"]
+    +layout--theme-dark
 
 body
     background-color: var(--layout-body-background-color)
