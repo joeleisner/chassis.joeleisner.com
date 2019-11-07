@@ -3,6 +3,16 @@
 @import "../shared/animations"
 @import "../shared/colors"
 @import "../shared/effects"
+@import "../shared/mq"
+
+\:root
+    --scrolltotop-border-color: #{darken($chassis-purple, 5%)}
+    --scrolltotop-background-color: #{$chassis-purple}
+
++color-scheme(dark)
+    \:root
+        --scrolltotop-border-color: #{darken($chassis-purple, 15%)}
+        --scrolltotop-background-color: #{darken($chassis-purple, 10%)}
 
 .scroll-to-top
     position: fixed
@@ -14,16 +24,16 @@
     width: 60px
     height: 60px
     padding: 0
-    border: 1px solid darken($chassis-purple, 5%)
+    border: 1px solid var(--scrolltotop-border-color)
     border-radius: 100%
-    background-color: $chassis-purple
+    background-color: var(--scrolltotop-background-color)
     font-size: 2rem
     line-height: 1
     color: $white
     transition: right $transition-timing, background-color $transition-timing
     box-shadow: $drop-shadow
     &:hover, &:focus
-        background-color: darken($chassis-purple, 5%)
+        background-color: var(--scrolltotop-border-color)
 
 .scroll-to-top:focus,
 .scroll-to-top--visible

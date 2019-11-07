@@ -3,26 +3,47 @@
 @import "../shared/animations"
 @import "../shared/colors"
 @import "../shared/effects"
+@import "../shared/mq"
 
 @import "../../../node_modules/chassis-css/dist/sass/_chassis.sass"
 
+\:root
+    --layout-body-background-color: #{$white}
+    --layout-body-color: #{$slate}
+    --layout-link-color: #{$blue}
+    --layout-link-hover-color: #{darken($blue, 10%)}
+    --layout-link-focus-color: #{$red}
+    --layout-code-background-color: #{darken($light-gray, 5%)}
+    --layout-code-color: #{$black}
+
++color-scheme(dark)
+    \:root
+        --layout-body-background-color: #{$black}
+        --layout-body-color: #{$white}
+        --layout-link-color: #{lighten($blue, 10%)}
+        --layout-link-hover-color: #{$blue}
+        --layout-link-focus-color: #{lighten($red, 10%)}
+        --layout-code-background-color: #{$slate}
+        --layout-code-color: #{$white}
+
 body
+    background-color: var(--layout-body-background-color)
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans ,Ubuntu, Cantarell, "Helvetica Neue", sans-serif
-    color: $slate
+    color: var(--layout-body-color)
 
 a
-    color: $blue
+    color: var(--layout-link-color)
     transition: color $transition-timing
     &:hover
-        color: darken($blue, 10%)
+        color: var(--layout-link-hover-color)
     &:focus
-        color: $red
+        color: var(--layout-link-focus-color)
 
 *:not(pre) > code
     padding: .025rem .25rem
     border-radius: $border-radius
-    background-color: darken($light-gray, 5%)
-    color: $black
+    background-color: var(--layout-code-background-color)
+    color: var(--layout-code-color)
 
 .site
     display: flex
