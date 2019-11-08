@@ -3,17 +3,46 @@
 @import "../shared/animations"
 @import "../shared/colors"
 @import "../shared/effects"
+@import "../shared/mq"
+
+=code--theme-light
+    --code-border-color: #{darken($light-gray, 5%)}
+    --code__example-background-color: #{$white}
+    --code__example-col-border-color: #{darken($light-gray, 10%)}
+    --code__example-col-background-color: #{$light-gray}
+    --code__example-col-color: #{$black}
+
+=code--theme-dark
+    --code-border-color: #{darken($slate, 10%)}
+    --code__example-background-color: #{darken($slate, 5%)}
+    --code__example-col-border-color: #{$black}
+    --code__example-col-background-color: #{darken($slate, 10%)}
+    --code__example-col-color: #{$white}
+
+\:root
+    +code--theme-light
+
++color-scheme(dark)
+    \:root
+        +code--theme-dark
+
+[data-theme="light"]
+    +code--theme-light
+
+[data-theme="dark"]
+    +code--theme-dark
 
 .code
     width: 100%
     margin-bottom: 1rem
-    border: 1px solid darken($light-gray, 5%)
+    border: 1px solid var(--code-border-color)
     border-radius: $border-radius
     overflow: hidden
     box-shadow: $drop-shadow
 
     .code__example
         padding: 1rem
+        background-color: var(--code__example-background-color)
         overflow: hidden
 
         .container
@@ -27,9 +56,9 @@
             align-items: center
             padding-top: 15px
             padding-bottom: 15px
-            border: 1px solid darken($light-gray, 10%)
-            background-color: $light-gray
-            color: $black
+            border: 1px solid var(--code__example-col-border-color)
+            background-color: var(--code__example-col-background-color)
+            color: var(--code__example-col-color)
 
         & > *:first-child
             margin-top: 0
@@ -62,4 +91,4 @@
         margin-bottom: 0
 
     .code__example + .code__snippet
-        border-top: 1px solid $light-gray
+        border-top: 1px solid var(--code-border-color)

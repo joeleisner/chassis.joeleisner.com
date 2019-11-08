@@ -4,8 +4,40 @@
 @import "../shared/colors"
 @import "../shared/mq"
 
+=footer--theme-light
+    --footer-border-color: #{darken($light-gray, 5%)}
+    --footer-link-color: #{$slate}
+    --footer-link-hover-focus-color: #{$black}
+    --footer__links-hover-focus-background-color: #{$light-gray}
+    --footer__links-hover-focus-color: #{$black}
+
+=footer--theme-dark
+    --footer-border-color: #{darken($slate, 10%)}
+    --footer-link-color: #{$light-gray}
+    --footer-link-hover-focus-color: #{darken($light-gray, 10%)}
+    --footer__links-hover-focus-background-color: #{darken($slate, 5%)}
+    --footer__links-hover-focus-color: #{$white}
+
+\:root
+    +footer--theme-light
+
++color-scheme(dark)
+    \:root
+        +footer--theme-dark
+
+[data-theme="light"]
+    +footer--theme-light
+
+[data-theme="dark"]
+    +footer--theme-dark
+
 .footer
-    border-top: 1px solid darken($light-gray, 5%)
+    border-top: 1px solid var(--footer-border-color)
+
+    button, a
+        color: var(--footer-link-color)
+        &:hover, &:focus
+            color: var(--footer-link-hover-focus-color)
 
 .footer__content
     flex: 1
@@ -25,30 +57,30 @@
     padding-top: .5rem
     padding-bottom: 1rem
 
-.footer__information a,
-.footer__links a
-    color: $slate
-    &:hover, &:focus
-        color: $black
-
 .footer__links
     display: flex
     width: 100%
-    border-top: 1px solid darken($light-gray, 5%)
+    border-top: 1px solid var(--footer-border-color)
 
-    a
+    & > *
         flex: 1
         padding: 1rem
-        border-right: 1px solid darken($light-gray, 5%)
+        border-right: 1px solid var(--footer-border-color)
+        background-color: transparent
         text-align: center
         transition: background-color $transition-timing, color $transition-timing
         &:hover, &:focus
-            background-color: $light-gray
-            color: $black
+            background-color: var(--footer__links-hover-focus-background-color)
+            color: var(--footer__links-hover-focus-color)
         &:last-child
             border-right: none
 
-+media-query('sm')
+    button
+        border-top: none
+        border-bottom: none
+        border-left: none
+
++breakpoint('sm')
     .footer__content
         flex-direction: row
         padding-left: 15px
@@ -63,8 +95,8 @@
         width: auto
         border-top: none
 
-        a:first-child
-            border-left: 1px solid darken($light-gray, 5%)
+        & > *:first-child
+            border-left: 1px solid var(--footer-border-color)
 
-        a:last-child
-            border-right: 1px solid darken($light-gray, 5%)
+        & > *:last-child
+            border-right: 1px solid var(--footer-border-color)

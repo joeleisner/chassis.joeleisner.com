@@ -78,7 +78,7 @@ const IndexPage = () => (
         <h3>Heading classes</h3>
         <p>
             Sometimes you want to style elements to look like headings,
-            especially in the event that an actual heading element does make
+            especially in the event that an actual heading element doesn't make
             sense logically or from an accessibility standpoint; That's where
             heading classes come in handy:
         </p>
