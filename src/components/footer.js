@@ -1,4 +1,5 @@
 import React from 'react';
+import Cookies from 'js-cookie';
 import { faHeart, faHome, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -12,34 +13,47 @@ class Footer extends React.Component {
         super(props);
     }
 
-    state = { theme: 'light' };
+    state = { system: 'light', theme: 'light' };
 
-    setDocumentThemeAttribute(theme) {
-        return document.documentElement.setAttribute('data-theme', theme);
+    removeThemeOverride() {
+        // Remove the document element's theme data...
+        document.documentElement.removeAttribute('data-theme');
+        // ... and remove any theme override cookies
+        Cookies.remove('chassis-theme');
     }
 
-    changeTheme() {
-        // Store the theme to change to (opposite of what's currently set)
-        const theme = this.state.theme === 'light' ? 'dark' : 'light';
+    setThemeOverride(theme) {
+        // Add the theme to the document element's theme data...
+        document.documentElement.setAttribute('data-theme', theme);
+        // ... and store it as a cookie
+        Cookies.set('chassis-theme', theme);
+    }
 
-        // Set the theme state...
-        this.setState({ theme });
-        // ... and the document's theme attribute with the new theme
-        this.setDocumentThemeAttribute(theme);
+    changeTheme(forcedTheme) {
+        // Store the theme to change to (opposite of what's currently set)
+        const {
+                system,
+                theme: currentTheme,
+            }     = this.state,
+            theme = forcedTheme ? forcedTheme : currentTheme === 'light' ? 'dark' : 'light';
+
+        // Set the system and site theme state...
+        this.setState({ system, theme });
+        // Finally, if the new theme is the same as the system's theme, remove any potential override cookie, otherwise save one
+        return system === theme ? this.removeThemeOverride() : this.setThemeOverride(theme);
     }
 
     componentDidMount() {
-        // Check to see if the user is using a system dark mode...
-        const { matches: inDarkMode } = window.matchMedia('(prefers-color-scheme: dark)');
-        // ... and if so, set the theme state to "dark"
-        if (inDarkMode) {
-            this.setState({
-                theme: 'dark'
-            });
-        }
+        // Attemp to grab a theme override cookie...
+        const override              = Cookies.get('chassis-theme'),
+            // ... and whether or not the system theme is dark...
+            { matches: inDarkMode } = window.matchMedia('(prefers-color-scheme: dark)'),
+            // ... and save them
+            system                  = inDarkMode ? 'dark' : 'light',
+            theme                   = override ? override : system;
 
-        // Finally, set the document's theme attribute to what's selected
-        this.setDocumentThemeAttribute(inDarkMode ? 'dark' : 'light');
+        // Finally, set the system and site theme states and finally change the theme
+        return this.setState({ system, theme }, () => this.changeTheme(theme));
     }
 
     render() {
@@ -71,7 +85,7 @@ class Footer extends React.Component {
                                 <button
                                     aria-label={changeThemeMessage}
                                     title={changeThemeMessage}
-                                    onClick={this.changeTheme.bind(this)}
+                                    onClick={() => this.changeTheme.bind(this)()}
                                 >
                                     <Icon
                                         icon={theme === 'light' ? faMoon : faSun }
