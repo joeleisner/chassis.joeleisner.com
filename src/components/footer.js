@@ -23,10 +23,12 @@ class Footer extends React.Component {
     }
 
     setThemeOverride(theme) {
-        // Add the theme to the document element's theme data...
+        // Add the theme to the document element's theme data,...
         document.documentElement.setAttribute('data-theme', theme);
-        // ... and store it as a cookie
-        Cookies.set('chassis-theme', theme);
+        // ... set a cookie expiration date of 1 year,...
+        const expires = 365;
+        // ... and store the theme override cookie
+        Cookies.set('chassis-theme', theme, { expires });
     }
 
     changeTheme(forcedTheme) {
