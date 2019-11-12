@@ -17,6 +17,7 @@ npm run build
 
 # Hot reload changes on localhost:8000
 npm run develop
+npm run dev
 npm run start
 
 # Consistently format all code
