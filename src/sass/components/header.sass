@@ -8,11 +8,19 @@
 =header--theme-light
     --header-background-purple: #{$chassis-purple}
     --header-background-blue: #{$chassis-blue}
+    --header__nav-link--active-background-color: #{$white}
+    --header__nav-link--active-color: #{$slate}
+    --header__nav-link--active-hover-focus-background-color: #{$light-gray}
+    --header__nav-link--active-hover-focus-color: #{$black}
     --header__wave-fill: #{$white}
 
 =header--theme-dark
     --header-background-purple: #{darken($chassis-purple, 10%)}
     --header-background-blue: #{darken($chassis-blue, 10%)}
+    --header__nav-link--active-background-color: #{darken($slate, 5%)}
+    --header__nav-link--active-color: #{$white}
+    --header__nav-link--active-hover-focus-background-color: #{darken($slate, 10%)}
+    --header__nav-link--active-hover-focus-color: #{$white}
     --header__wave-fill: #{$black}
 
 \:root
@@ -116,13 +124,13 @@
         color: $white
 
 .header__nav-link--active
-    background-color: $white
-    color: $slate
+    background-color: var(--header__nav-link--active-background-color)
+    color: var(--header__nav-link--active-color)
     box-shadow: $drop-shadow
     &:hover, &:focus
-        background-color: $light-gray
+        background-color: var(--header__nav-link--active-hover-focus-background-color)
         text-decoration: none
-        color: $black
+        color: var(--header__nav-link--active-hover-focus-color)
 
 .header__summary p
     line-height: 1.5
