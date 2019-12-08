@@ -103,6 +103,8 @@ const IndexPage = () => (
             npm install chassis-css
         </Code>
         <h2>Changelog</h2>
+        <h3>4.0.2</h3>
+        <p>This patch no longer explicitly sets the root font-size to 16px, leaving it up to the browser's default and respecting the user's preference if set. It also updates some packages to their latest version.</p>
         <h3>4.0.1</h3>
         <p>
             This patch brings some much needed stability to the framework after
