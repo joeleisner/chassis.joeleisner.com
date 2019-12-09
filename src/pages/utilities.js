@@ -59,7 +59,7 @@ const IndexPage = () => (
         <p>
             In the above example, there are two unordered lists, the first
             unstyled and the second inline. List style classes follow the{' '}
-            <code>.l-</code> class structure, where <code>*</code> can be one of
+            <code>.l-*</code> class structure, where <code>*</code> can be one of
             the following letters:
         </p>
         <ul>
