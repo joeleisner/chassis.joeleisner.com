@@ -3,7 +3,7 @@ module.exports = {
         title: 'Chassis.css',
         description: 'A minimalistic grid & typography CSS framework',
         author: '@joeleisner',
-        version: '4.0.2',
+        version: '4.0.3',
         siteUrl: 'https://chassis.joeleisner.com',
         defaultImage: '/images/thumbnail.png',
         navigation: [
