@@ -12,19 +12,11 @@ class Code extends React.Component {
     }
 
     state = {
-        copied: false,
-        example: ''
+        copied: false
     };
 
     convertChildrenIntoCodeExample() {
-        const example = (
-            <div
-                className="code__example"
-                dangerouslySetInnerHTML={{ __html: this.props.children }}
-            ></div>
-        );
-
-        this.setState({ example });
+        this.refs.example.innerHTML = this.props.children;
     }
 
     componentDidMount() {
@@ -41,7 +33,7 @@ class Code extends React.Component {
         const { language, example, children, ...props } = this.props;
         return (
             <div className="code">
-                {example ? this.state.example : ''}
+                {example ? <div className="code__example" ref="example"></div> : ''}
                 <div className="code__snippet">
                     <CopyToClipboard
                         text={children}
