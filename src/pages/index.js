@@ -103,6 +103,8 @@ const IndexPage = () => (
             npm install chassis-css
         </Code>
         <h2>Changelog</h2>
+        <h3>4.0.4</h3>
+        <p>This patch updates <code>autoprefixer</code> to its latest version, fixes security vulnerabilities with the development dependencies, and simplifies the header used within the output files.</p>
         <h3>4.0.3</h3>
         <p>This patch explicitly sets the font-size of code elements (<code>pre</code>, <code>code</code>, <code>kbd</code>, and <code>samp</code>) to 1rem. It also updates autoprefixer and its sub-dependency of caniuse-lite to their latest versions.</p>
         <h3>4.0.2</h3>
