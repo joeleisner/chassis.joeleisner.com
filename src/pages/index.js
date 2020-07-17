@@ -8,13 +8,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+import '../sass/pages/index.sass';
+
 import Code from '../components/code';
-import ExternalLink from '../components/externallink';
-import Icon from '../components/icon';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import ExternalLink from '../components/externallink';
+import Icon from '../components/icon';
+import Card from '../components/card';
 
-import '../sass/pages/index.sass';
 
 const title = 'Chassis.css',
     tagline = 'A minimalistic grid & typography CSS framework.',
@@ -57,45 +59,33 @@ const Summary = () => (
 const IndexPage = () => (
     <Layout summary={Summary}>
         <SEO title={title} description={[tagline, description].join(' ')} />
-        <div className="row">
+        <div className="row mb-f">
             <div className="col">
-                <div className="index__perk">
-                    <h2 className="index__perk-title">
-                        <Icon icon={faExpand} style={{ width: '1.75rem' }} />
-                        Expandable
-                    </h2>
-                    <p className="index__perk-description">
+                <Card icon={faExpand} title="Expandable">
+                    <p>
                         Chassis.css sets out to deliver web developers core
                         features, like a grid system and typography defaults,
                         without too much styling.
                     </p>
-                </div>
+                </Card>
             </div>
             <div className="col">
-                <div className="index__perk">
-                    <h2 className="index__perk-title">
-                        <Icon icon={faFeather} style={{ width: '1.75rem' }} />
-                        Lightweight
-                    </h2>
-                    <p className="index__perk-description">
+                <Card icon={faFeather} title="Lightweight">
+                    <p>
                         At just 1.6KB minified and gzipped, chassis.css has a
                         lot of room for you to add your own touch. No bloat or
                         extras; Just the bare necessities.
                     </p>
-                </div>
+                </Card>
             </div>
             <div className="col">
-                <div className="index__perk">
-                    <h2 className="index__perk-title">
-                        <Icon icon={faAsterisk} style={{ width: '1.75rem' }} />
-                        Modern
-                    </h2>
-                    <p className="index__perk-description">
+                <Card icon={faAsterisk} title="Modern">
+                    <p>
                         Built mobile-first using newer web technologies such as
                         CSS flexbox, chassis.css provides a modern framework for
                         your modern workflow.
                     </p>
-                </div>
+                </Card>
             </div>
         </div>
         <h2>Installation</h2>
@@ -103,6 +93,8 @@ const IndexPage = () => (
             npm install chassis-css
         </Code>
         <h2>Changelog</h2>
+        <h3>4.0.5</h3>
+        <p>This patch updates <code>autoprefixer</code> and <code>gulp-sass</code> to their latest versions, fixes security vulnerabilities with development dependencies, and simplifies the Gulp tasks and NPM scripts to make maintenance and development easier.</p>
         <h3>4.0.4</h3>
         <p>This patch updates <code>autoprefixer</code> to its latest version, fixes security vulnerabilities with the development dependencies, and simplifies the header used within the output files.</p>
         <h3>4.0.3</h3>
