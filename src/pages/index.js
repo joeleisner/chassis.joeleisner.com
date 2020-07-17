@@ -8,14 +8,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import Card from '../components/card';
+import '../sass/pages/index.sass';
+
 import Code from '../components/code';
-import ExternalLink from '../components/externallink';
-import Icon from '../components/icon';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import ExternalLink from '../components/externallink';
+import Icon from '../components/icon';
+import Card from '../components/card';
 
-import '../sass/pages/index.sass';
 
 const title = 'Chassis.css',
     tagline = 'A minimalistic grid & typography CSS framework.',
