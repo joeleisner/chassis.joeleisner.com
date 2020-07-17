@@ -103,6 +103,8 @@ const IndexPage = () => (
             npm install chassis-css
         </Code>
         <h2>Changelog</h2>
+        <h3>4.0.5</h3>
+        <p>This patch updates <code>autoprefixer</code> and <code>gulp-sass</code> to their latest versions, fixes security vulnerabilities with development dependencies, and simplifies the Gulp tasks and NPM scripts to make maintenance and development easier.</p>
         <h3>4.0.4</h3>
         <p>This patch updates <code>autoprefixer</code> to its latest version, fixes security vulnerabilities with the development dependencies, and simplifies the header used within the output files.</p>
         <h3>4.0.3</h3>
