@@ -1,7 +1,13 @@
+import { Link } from 'gatsby';
 import React from 'react';
+
+import { faSpellCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSitemap } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Card from '../components/card';
 
 const Summary = () => (
     <>
@@ -14,18 +20,28 @@ const NotFoundPage = () => (
     <Layout summary={Summary}>
         <SEO title="Page Not found" />
         <h2>Things you can do.</h2>
-        <ul>
-            <li>Double check the URL for any misspellings.</li>
-            <li>
-                Checkout the sitemap for pages that are similar to what you're
-                looking for.
-            </li>
-            <li>
-                If you continue to reach this page, please contact{' '}
-                <a href="mailto:jeisner93@gmail.com">jeisner93@gmail.com</a> so
-                I can fix the mistake.
-            </li>
-        </ul>
+        <p>Here's some tips to help you find your way.</p>
+        <div className="row">
+            <div className="col">
+                <Card icon={faSpellCheck}>
+                    <p>Double check the URL for any misspellings or accidental characters.</p>
+                </Card>
+            </div>
+            <div className="col">
+                <Card icon={faSitemap}>
+                    <p>
+                        Checkout the <Link to="/sitemap.xml">sitemap</Link> for pages that are similar to what you're looking for.
+                    </p>
+                </Card>
+            </div>
+            <div className="col">
+                <Card icon={faEnvelope}>
+                    <p>
+                        If you continue to reach this page, please contact <a href="mailto:jeisner93@gmail.com">me</a> so I can fix the mistake.
+                    </p>
+                </Card>
+            </div>
+        </div>
     </Layout>
 );
 
