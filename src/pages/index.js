@@ -8,15 +8,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import '../sass/pages/index.sass';
+import './index.scss';
 
+import Card from '../components/card';
 import Code from '../components/code';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
 import ExternalLink from '../components/externallink';
 import Icon from '../components/icon';
-import Card from '../components/card';
-
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const title = 'Chassis.css',
     tagline = 'A minimalistic grid & typography CSS framework.',
@@ -59,8 +58,8 @@ const Summary = () => (
 const IndexPage = () => (
     <Layout summary={Summary}>
         <SEO title={title} description={[tagline, description].join(' ')} />
-        <div className="row mb-f">
-            <div className="col">
+        <div className="row">
+            <div className="col mb-f">
                 <Card icon={faExpand} title="Expandable">
                     <p>
                         Chassis.css sets out to deliver web developers core
@@ -69,7 +68,7 @@ const IndexPage = () => (
                     </p>
                 </Card>
             </div>
-            <div className="col">
+            <div className="col mb-f">
                 <Card icon={faFeather} title="Lightweight">
                     <p>
                         At just 1.6KB minified and gzipped, chassis.css has a
@@ -78,7 +77,7 @@ const IndexPage = () => (
                     </p>
                 </Card>
             </div>
-            <div className="col">
+            <div className="col mb-f">
                 <Card icon={faAsterisk} title="Modern">
                     <p>
                         Built mobile-first using newer web technologies such as
@@ -92,107 +91,15 @@ const IndexPage = () => (
         <Code language="shell" example={false}>
             npm install chassis-css
         </Code>
-        <h2>Changelog</h2>
-        <h3>4.0.5</h3>
-        <p>This patch updates <code>autoprefixer</code> and <code>gulp-sass</code> to their latest versions, fixes security vulnerabilities with development dependencies, and simplifies the Gulp tasks and NPM scripts to make maintenance and development easier.</p>
-        <h3>4.0.4</h3>
-        <p>This patch updates <code>autoprefixer</code> to its latest version, fixes security vulnerabilities with the development dependencies, and simplifies the header used within the output files.</p>
-        <h3>4.0.3</h3>
-        <p>This patch explicitly sets the font-size of code elements (<code>pre</code>, <code>code</code>, <code>kbd</code>, and <code>samp</code>) to 1rem. It also updates autoprefixer and its sub-dependency of caniuse-lite to their latest versions.</p>
-        <h3>4.0.2</h3>
-        <p>This patch no longer explicitly sets the root font-size to 16px, leaving it up to the browser's default and respecting the user's preference if set. It also updates some packages to their latest version.</p>
-        <h3>4.0.1</h3>
+        <h2>
+            Latest release <small>v4.0.6</small>
+        </h2>
         <p>
-            This patch brings some much needed stability to the framework after
-            its big release. Here's what to expect:
+            This patch updates all dependencies to their latest versions, fixes
+            security vulnerabilities with development dependencies, and swaps
+            out the deprecated <code>NodeSass</code> compiler used by{' '}
+            <code>gulp-sass</code> with <code>DartSass</code>.
         </p>
-        <ul>
-            <li>
-                Rows no longer change their <code>flex-direction</code> between{' '}
-                <code>column</code> on extra small viewports and{' '}
-                <code>row</code> on small viewports and above.
-                <ul>
-                    <li>Rows now wrap columns to vertically stack them.</li>
-                    <li>
-                        Vertical and horizontal alignment modifier classes no
-                        longer flip-flop functionality between extra small and
-                        small viewports.
-                    </li>
-                    <li>
-                        The reverse row modifier class, <code>.row.rev</code>,
-                        has been changed.
-                    </li>
-                    <li>
-                        The way columns fill the row's width on extra small
-                        viewports has been changed.
-                    </li>
-                </ul>
-            </li>
-            <li>
-                New align content modifier classes, <code>.ac-*</code>, have
-                been added to provide more vertical alignment options.
-            </li>
-        </ul>
-        <h3>4.0.0</h3>
-        <p>
-            Chassis.css has been overhauled from the ground up to support some
-            killer new features. Here's what you can look forward to:
-        </p>
-        <ul>
-            <li>
-                The grid system now uses flexbox.
-                <ul>
-                    <li>
-                        You can simply use the <code>.col</code> class to
-                        automatically take up remaining space in a row.
-                    </li>
-                    <li>
-                        <code>.row.rev</code> allows you to quickly reverse the
-                        order of a row.
-                    </li>
-                    <li>
-                        Gone are the days of push/pull - You can now order/space
-                        your columns with <code>.or-*</code> (order),{' '}
-                        <code>.or-r*</code> (order reset on mobile), and{' '}
-                        <code>.os-*</code> (offset) classes.
-                    </li>
-                    <li>
-                        You can now vertically/horizontally align columns with{' '}
-                        <code>.ai-*</code> (align-items), <code>.as-*</code>{' '}
-                        (align-self), and <code>.jc-*</code> (justify-content)
-                        classes.
-                    </li>
-                </ul>
-            </li>
-            <li>
-                The reset and typography defaults have been ironed out.
-                <ul>
-                    <li>
-                        The reset only overrides necessary things and avoids
-                        practices that can compromise accessibility.
-                    </li>
-                    <li>
-                        Overall sizes and spacing between typography elements
-                        have been simplified dramatically.
-                    </li>
-                    <li>
-                        New heading <code>.h*</code> classes allow you to make
-                        any typography element look like a heading.
-                    </li>
-                </ul>
-            </li>
-            <li>
-                Utility classes, particularly for margins/padding, have become
-                way more concise/versatile.
-                <ul>
-                    <li>
-                        These classes are now constructable, allowing you to
-                        target all/specific sides, add negative/positive
-                        adjustments, and utilize 6 levels of adjustments.
-                    </li>
-                </ul>
-            </li>
-        </ul>
         <p>
             Check out the{' '}
             <ExternalLink

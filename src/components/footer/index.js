@@ -1,12 +1,17 @@
 import React from 'react';
 import Cookies from 'js-cookie';
-import { faHeart, faHome, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import {
+    faHeart,
+    faHome,
+    faMoon,
+    faSun
+} from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import ExternalLink from './externallink';
-import Icon from './icon';
+import ExternalLink from '../externallink';
+import Icon from '../icon';
 
-import '../sass/components/footer.sass';
+import './footer.scss';
 
 class Footer extends React.Component {
     constructor(props) {
@@ -33,34 +38,41 @@ class Footer extends React.Component {
 
     changeTheme(forcedTheme) {
         // Store the theme to change to (opposite of what's currently set)
-        const {
-                system,
-                theme: currentTheme,
-            }     = this.state,
-            theme = forcedTheme ? forcedTheme : currentTheme === 'light' ? 'dark' : 'light';
+        const { system, theme: currentTheme } = this.state,
+            theme = forcedTheme
+                ? forcedTheme
+                : currentTheme === 'light'
+                ? 'dark'
+                : 'light';
 
         // Set the system and site theme state...
         this.setState({ system, theme });
         // Finally, if the new theme is the same as the system's theme, remove any potential override cookie, otherwise save one
-        return system === theme ? this.removeThemeOverride() : this.setThemeOverride(theme);
+        return system === theme
+            ? this.removeThemeOverride()
+            : this.setThemeOverride(theme);
     }
 
     componentDidMount() {
         // Attemp to grab a theme override cookie...
-        const override              = Cookies.get('chassis-theme'),
+        const override = Cookies.get('chassis-theme'),
             // ... and whether or not the system theme is dark...
-            { matches: inDarkMode } = window.matchMedia('(prefers-color-scheme: dark)'),
+            { matches: inDarkMode } = window.matchMedia(
+                '(prefers-color-scheme: dark)'
+            ),
             // ... and save them
-            system                  = inDarkMode ? 'dark' : 'light',
-            theme                   = override ? override : system;
+            system = inDarkMode ? 'dark' : 'light',
+            theme = override ? override : system;
 
         // Finally, set the system and site theme states and finally change the theme
         return this.setState({ system, theme }, () => this.changeTheme(theme));
     }
 
     render() {
-        const { theme }        = this.state,
-            changeThemeMessage = `Current theme: ${ theme }. Click to change theme to ${ theme === 'light' ? 'dark' : 'light' }.`;
+        const { theme } = this.state,
+            changeThemeMessage = `Current theme: ${theme}. Click to change theme to ${
+                theme === 'light' ? 'dark' : 'light'
+            }.`;
         return (
             <footer className="footer">
                 <div className="container">
@@ -87,10 +99,14 @@ class Footer extends React.Component {
                                 <button
                                     aria-label={changeThemeMessage}
                                     title={changeThemeMessage}
-                                    onClick={() => this.changeTheme.bind(this)()}
+                                    onClick={() =>
+                                        this.changeTheme.bind(this)()
+                                    }
                                 >
                                     <Icon
-                                        icon={theme === 'light' ? faMoon : faSun }
+                                        icon={
+                                            theme === 'light' ? faMoon : faSun
+                                        }
                                         style={{ width: '1rem' }}
                                         text={changeThemeMessage}
                                     />

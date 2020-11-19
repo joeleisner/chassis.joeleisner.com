@@ -6,9 +6,9 @@ import {
     faCheckCircle
 } from '@fortawesome/free-solid-svg-icons';
 
-import Icon from './icon';
+import Icon from '../icon';
 
-import '../sass/components/alert.sass';
+import './alert.scss';
 
 const icons = {
     info: faInfoCircle,

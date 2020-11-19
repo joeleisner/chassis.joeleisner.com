@@ -53,8 +53,9 @@ function SEO({ description, lang, meta, title, image }) {
                 },
                 {
                     property: 'og:image',
-                    content: `${site.siteMetadata.siteUrl}${image ||
-                        site.siteMetadata.defaultImage}`
+                    content: `${site.siteMetadata.siteUrl}${
+                        image || site.siteMetadata.defaultImage
+                    }`
                 },
                 {
                     property: 'og:type',

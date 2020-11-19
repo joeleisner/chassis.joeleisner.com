@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import Icon from './icon';
+import Icon from '../icon';
 
-import Logo from '../images/logo.svg';
-import Wave from '../images/wave.svg';
+import Logo from '../../images/logo.svg';
+import Wave from '../../images/wave.svg';
 
-import '../sass/components/header.sass';
+import './header.scss';
 
 class Header extends React.Component {
     constructor(props) {

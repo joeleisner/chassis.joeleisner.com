@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import Dark from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
+import { a11yDark as Dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-import '../sass/components/code.sass';
+import './code.scss';
 
 class Code extends React.Component {
     constructor(props) {
         super(props);
+        this.example = React.createRef();
     }
 
     state = {
@@ -16,7 +17,7 @@ class Code extends React.Component {
     };
 
     convertChildrenIntoCodeExample() {
-        this.refs.example.innerHTML = this.props.children;
+        this.example.current.innerHTML = this.props.children;
     }
 
     componentDidMount() {
@@ -33,7 +34,11 @@ class Code extends React.Component {
         const { language, example, children, ...props } = this.props;
         return (
             <div className="code">
-                {example ? <div className="code__example" ref="example"></div> : ''}
+                {example ? (
+                    <div className="code__example" ref={this.example}></div>
+                ) : (
+                    ''
+                )}
                 <div className="code__snippet">
                     <CopyToClipboard
                         text={children}
@@ -65,7 +70,7 @@ Code.propTypes = {
 };
 
 Code.defaultProps = {
-    language: 'html',
+    language: 'xml',
     example: true
 };
 

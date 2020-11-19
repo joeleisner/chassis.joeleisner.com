@@ -6,7 +6,8 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const title = 'Utility classes',
-    description = 'In addition to its grid system and style resets, chassis.css provides verbose and easy-to-use utility classes to manipulate just about everything. If there\'s something you need to adjust, there\'s probably a utility class for it.';
+    description =
+        "In addition to its grid system and style resets, chassis.css provides verbose and easy-to-use utility classes to manipulate just about everything. If there's something you need to adjust, there's probably a utility class for it.";
 
 const Summary = () => (
     <>
@@ -59,8 +60,8 @@ const IndexPage = () => (
         <p>
             In the above example, there are two unordered lists, the first
             unstyled and the second inline. List style classes follow the{' '}
-            <code>.l-*</code> class structure, where <code>*</code> can be one of
-            the following letters:
+            <code>.l-*</code> class structure, where <code>*</code> can be one
+            of the following letters:
         </p>
         <ul>
             <li>

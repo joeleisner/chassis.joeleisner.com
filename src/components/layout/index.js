@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
-import Footer from './footer';
-import ScrollToTop from './scrolltotop';
+import Header from '../header';
+import Footer from '../footer';
+import ScrollToTop from '../scrolltotop';
 
-import '../sass/components/layout.sass';
+import './layout.scss';
 
 const Layout = ({ summary, children }) => {
     const data = useStaticQuery(graphql`
