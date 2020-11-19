@@ -5,9 +5,9 @@ import { faSpellCheck } from '@fortawesome/free-solid-svg-icons';
 import { faSitemap } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
+import Card from '../components/card';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Card from '../components/card';
 
 const Summary = () => (
     <>
@@ -22,22 +22,28 @@ const NotFoundPage = () => (
         <h2>Things you can do.</h2>
         <p>Here's some tips to help you find your way.</p>
         <div className="row">
-            <div className="col">
+            <div className="col mb-f">
                 <Card icon={faSpellCheck}>
-                    <p>Double check the URL for any misspellings or accidental characters.</p>
-                </Card>
-            </div>
-            <div className="col">
-                <Card icon={faSitemap}>
                     <p>
-                        Checkout the <Link to="/sitemap.xml">sitemap</Link> for pages that are similar to what you're looking for.
+                        Double check the URL for any misspellings or accidental
+                        characters.
                     </p>
                 </Card>
             </div>
-            <div className="col">
+            <div className="col mb-f">
+                <Card icon={faSitemap}>
+                    <p>
+                        Checkout the <Link to="/sitemap.xml">sitemap</Link> for
+                        pages that are similar to what you're looking for.
+                    </p>
+                </Card>
+            </div>
+            <div className="col mb-f">
                 <Card icon={faEnvelope}>
                     <p>
-                        If you continue to reach this page, please contact <a href="mailto:jeisner93@gmail.com">me</a> so I can fix the mistake.
+                        If you continue to reach this page, please contact{' '}
+                        <a href="mailto:jeisner93@gmail.com">me</a> so I can fix
+                        the mistake.
                     </p>
                 </Card>
             </div>

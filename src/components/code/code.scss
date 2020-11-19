@@ -1,0 +1,145 @@
+// Code
+
+@use "../shared/animations";
+@use "../shared/colors";
+@use "../shared/effects";
+@use "../shared/media";
+
+// ---- Code ----
+
+$border-color: darken(colors.$light-gray, 5%);
+$border-color--dark: darken(colors.$slate, 10%);
+
+.code {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid var(--code--border-color);
+    border-radius: effects.$border-radius;
+    overflow: hidden;
+    box-shadow: var(--code--box-shadow);
+    @include animations.transition(border-color, box-shadow);
+
+    @include media.theme("light") {
+        --code--border-color: #{$border-color};
+        --code--box-shadow: #{effects.$drop-shadow};
+    }
+
+    @include media.theme("dark") {
+        --code--border-color: #{$border-color--dark};
+    }
+
+    // ---- Example ----
+
+    $example--background-color: colors.$white;
+    $example--background-color--dark: darken(colors.$slate, 5%);
+
+    &__example {
+        padding: 1rem;
+        background-color: var(--code__example--background-color);
+        overflow: hidden;
+        @include animations.transition(background-color);
+
+        @include media.theme("light") {
+            --code__example--background-color: #{$example--background-color};
+        }
+
+        @include media.theme("dark") {
+            --code__example--background-color: #{$example--background-color--dark};
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+
+        $column--border-color: darken(colors.$light-gray, 10%);
+        $column--background-color: colors.$light-gray;
+        $column--color: colors.$black;
+
+        $column--border-color--dark: colors.$black;
+        $column--background-color--dark: darken(colors.$slate, 10%);
+
+        [class*="col"] {
+            align-items: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 1px solid var(--column--border-color);
+            background-color: var(--column--background-color);
+            color: var(--coloumn--color);
+            @include animations.transition(border-color, background-color);
+
+            @include media.theme("light") {
+                --column--border-color: #{$column--border-color};
+                --column--background-color: #{$column--background-color};
+                --column--color: #{$column--color};
+            }
+
+            @include media.theme("dark") {
+                --column--border-color: #{$column--border-color--dark};
+                --column--background-color: #{$column--background-color--dark};
+            }
+        }
+
+        & > *:first-child {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+            padding-top: 0;
+        }
+    }
+
+    // ---- Snippet ----
+
+    &__snippet {
+        position: relative;
+        margin-top: -1px;
+        border-top: 1px solid transparent;
+        @include animations.transition(border-color);
+    }
+
+    // ---- Copy ----
+
+    &__copy {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.5rem;
+        border: none;
+        border-radius: effects.$border-radius;
+        background-color: rgba(colors.$black, 0.5);
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 1;
+        color: colors.$white;
+        @include animations.transition(background-color);
+
+        &:hover,
+        &:focus {
+            background-color: colors.$black;
+        }
+    }
+
+    // ---- Syntax ----
+
+    &__syntax {
+        margin-bottom: 0;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    // ---- Example snippet ----
+
+    &__example + &__snippet {
+        border-color: var(--code--border-color);
+    }
+}

@@ -3,7 +3,7 @@ module.exports = {
         title: 'Chassis.css',
         description: 'A minimalistic grid & typography CSS framework',
         author: '@joeleisner',
-        version: '4.0.5',
+        version: '4.0.6',
         siteUrl: 'https://chassis.joeleisner.com',
         defaultImage: '/images/thumbnail.png',
         navigation: [
@@ -44,7 +44,13 @@ module.exports = {
                 icon: 'src/images/icon.png'
             }
         },
-        'gatsby-plugin-sass',
+        {
+            resolve: 'gatsby-plugin-sass',
+            options: {
+                implementation: require('sass'),
+                includePaths: ['node_modules']
+            }
+        },
         {
             resolve: 'gatsby-plugin-react-svg',
             options: {
