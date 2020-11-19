@@ -23,6 +23,9 @@ npm run start
 # Consistently format all code
 npm run format
 
+# Lint all JS code
+npm run lint
+
 # Serve production ready assets on localhost:9000
 npm run serve
 ```
