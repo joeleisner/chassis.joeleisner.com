@@ -34,6 +34,10 @@
         color: var(--index__button--color, colors.$white);
         @include animations.transition(border-color, background-color, color);
 
+        @include media.breakpoint("sm") {
+            margin-right: 0.5rem;
+        }
+
         &:hover,
         &:focus {
             --index__button--background-color: #{rgba(colors.$black, 0.2)};
@@ -91,10 +95,6 @@
                     --index__button--background-color: #{$button--highlight--active--background-color--dark};
                     --index__button--color: #{$button--highlight--active--color--dark};
                 }
-            }
-
-            @include media.breakpoint("sm") {
-                margin-right: 1rem;
             }
         }
     }
