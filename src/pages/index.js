@@ -92,13 +92,10 @@ const IndexPage = () => (
             npm install chassis-css
         </Code>
         <h2>
-            Latest release <small>v4.0.6</small>
+            Latest release <small>v4.0.7</small>
         </h2>
         <p>
-            This patch updates all dependencies to their latest versions, fixes
-            security vulnerabilities with development dependencies, and swaps
-            out the deprecated <code>NodeSass</code> compiler used by{' '}
-            <code>gulp-sass</code> with <code>DartSass</code>.
+            This patch updates all dependencies to their latest versions and replaces all SASS slash as division operations to <code>math.div(...)</code> due to future deprecation.
         </p>
         <p>
             Check out the{' '}
