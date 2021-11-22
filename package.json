@@ -53,5 +53,10 @@
   "bugs": {
     "url": "https://github.com/joeleisner/chassis.joeleisner.com/issues"
   },
-  "browserslist": "defaults and last 2 versions, not Explorer <= 11, not ExplorerMobile 11"
+  "browserslist": [
+    "defaults and last 2 versions",
+    "not Explorer <= 11",
+    "not ExplorerMobile 11",
+    "not OperaMini all"
+  ]
 }
