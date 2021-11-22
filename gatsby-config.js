@@ -3,7 +3,7 @@ module.exports = {
         title: 'Chassis.css',
         description: 'A minimalistic grid & typography CSS framework',
         author: '@joeleisner',
-        version: '4.0.7',
+        version: '4.0.8',
         siteUrl: 'https://chassis.joeleisner.com',
         defaultImage: '/images/thumbnail.png',
         navigation: [
@@ -65,7 +65,7 @@ module.exports = {
         'gatsby-plugin-sitemap'
     ],
     flags: {
-        DEV_SSR: true,
-        FAST_DEV: true
+        FAST_DEV: true,
+        PARALLEL_SOURCING: true
     }
 };

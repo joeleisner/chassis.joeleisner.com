@@ -228,10 +228,6 @@ $blue--dark: darken(colors.$chassis-blue, 10%);
         }
     }
 
-    &__summary p {
-        line-height: 1.5;
-    }
-
     // --- Wave ----
 
     $wave--fill: colors.$white;
