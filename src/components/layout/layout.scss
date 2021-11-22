@@ -35,6 +35,13 @@ body {
     }
 }
 
+// ---- Paragraphs ----
+
+p {
+    --line-height: 1.5em;
+    line-height: var(--line-height);
+}
+
 // ---- Links ----
 
 $link--color: colors.$blue;

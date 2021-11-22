@@ -13,6 +13,7 @@ class ScrollToTop extends React.Component {
     toggleVisibility(state) {
         if (!this.element) return;
 
+        this.element.setAttribute('tabindex', state ? 0 : -1);
         return this.element.setAttribute('aria-hidden', !state);
     }
 

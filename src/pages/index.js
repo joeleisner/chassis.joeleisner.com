@@ -29,7 +29,7 @@ const Summary = () => (
         <div className="index__buttons">
             <ExternalLink
                 href="https://github.com/joeleisner/chassis-css/releases"
-                title="Chassis.css GitHub releases"
+                title="Download Chassis.css releases"
                 className="index__button index__button--highlight"
             >
                 <Icon icon={faArrowCircleDown} style={{ width: '1em' }} />
@@ -92,10 +92,10 @@ const IndexPage = () => (
             npm install chassis-css
         </Code>
         <h2>
-            Latest release <small>v4.0.7</small>
+            Latest release <small>v4.0.8</small>
         </h2>
         <p>
-            This patch updates all dependencies to their latest versions and replaces all SASS slash as division operations to <code>math.div(...)</code> due to future deprecation.
+            This patch switches the package to ESM, drops IE support, updates all dependencies to their latest versions, and reorganizes the build system to be more maintainable.
         </p>
         <p>
             Check out the{' '}
