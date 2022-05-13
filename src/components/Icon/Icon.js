@@ -17,5 +17,3 @@ Icon.propTypes = {
     icon: PropTypes.object.isRequired,
     text: PropTypes.string
 };
-
-export default Icon;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../icon';
+import Icon from '../Icon';
 
 // The card title component
 export function Title({ icon, title }) {
@@ -25,23 +25,9 @@ export function Title({ icon, title }) {
     );
 }
 
-import './card.scss';
-
-export function Card({ icon, title, children, ...props }) {
-    return (
-        <div className="card" {...props}>
-            <Title icon={icon} title={title}/>
-            <div className="card__description">{children}</div>
-        </div>
-    );
-};
-
 import PropTypes from 'prop-types';
 
-Card.propTypes = {
+Title.propTypes = {
     icon: PropTypes.object,
-    title: PropTypes.string,
-    children: PropTypes.node.isRequired
+    title: PropTypes.string
 };
-
-export default Card;

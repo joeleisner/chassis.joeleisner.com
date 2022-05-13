@@ -1,14 +1,11 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-
-import Icon from '../icon';
-
+import Icon from '../Icon';
 import Logo from '../../images/logo.svg';
 import Wave from '../../images/wave.svg';
 
-import './header.scss';
+import './Header.scss';
 
 export function Header({
     title,
@@ -81,6 +78,8 @@ export function Header({
     );
 }
 
+import PropTypes from 'prop-types';
+
 Header.propTypes = {
     children: PropTypes.node.isRequired,
     siteTitle: PropTypes.string
@@ -89,5 +88,3 @@ Header.propTypes = {
 Header.defaultProps = {
     siteTitle: ''
 };
-
-export default Header;

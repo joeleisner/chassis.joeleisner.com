@@ -98,5 +98,3 @@ SEO.defaultProps = {
     meta: [],
     description: ''
 };
-
-export default SEO;

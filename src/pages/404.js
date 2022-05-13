@@ -1,13 +1,12 @@
-import { Link } from 'gatsby';
 import React from 'react';
-
+import { Link } from 'gatsby';
 import { faSpellCheck } from '@fortawesome/free-solid-svg-icons';
 import { faSitemap } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-import Card from '../components/card';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Card from '../components/Card';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 const Summary = () => (
     <>
@@ -16,7 +15,7 @@ const Summary = () => (
     </>
 );
 
-const NotFoundPage = () => (
+const PageNotFound = () => (
     <Layout summary={Summary}>
         <SEO title="Page Not found" />
         <h2>Things you can do.</h2>
@@ -51,4 +50,4 @@ const NotFoundPage = () => (
     </Layout>
 );
 
-export default NotFoundPage;
+export default PageNotFound;

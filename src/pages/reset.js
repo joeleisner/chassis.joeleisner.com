@@ -1,9 +1,8 @@
 import React from 'react';
-
-import Alert from '../components/alert';
-import Code from '../components/code';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Alert from '../components/Alert';
+import Code from '../components/Code';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 const title = 'Style resets',
     description =
@@ -16,7 +15,7 @@ const Summary = () => (
     </>
 );
 
-const IndexPage = () => (
+const ResetPage = () => (
     <Layout summary={Summary}>
         <SEO title={title} description={description} />
         <h2>The basics</h2>
@@ -157,4 +156,4 @@ const IndexPage = () => (
     </Layout>
 );
 
-export default IndexPage;
+export default ResetPage;

@@ -1,5 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
-import Cookies from 'js-cookie';
+import React, { useState, useRef, useEffect } from 'react';
 import {
     faHeart,
     faHome,
@@ -7,38 +6,16 @@ import {
     faSun
 } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
-import ExternalLink from '../externallink';
-import Icon from '../icon';
+import ExternalLink from '../ExternalLink';
+import Icon from '../Icon';
+import {
+    getSystem as getSystemThemePreference,
+    getLocal as getLocalThemePreference,
+    setLocal as setLocalThemePreference,
+    removeLocal as removeLocalThemePreference
+} from './theme';
 
-import './footer.scss';
-
-export function getSystemThemePreference() {
-    const { matches } = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-    );
-
-    return matches ? 'dark' : 'light';
-}
-
-export function getLocalThemePreference() {
-    return Cookies.get('chassis-theme');
-}
-
-export function setLocalThemePreference(theme) {
-    // Add the theme to the document element's theme data,...
-    document.documentElement.setAttribute('data-theme', theme);
-    // ... set a cookie expiration date of 1 year,...
-    const expires = 365;
-    // ... and store the theme override cookie
-    Cookies.set('chassis-theme', theme, { expires });
-}
-
-export function removeLocalThemePreference() {
-    // Remove the document element's theme data...
-    document.documentElement.removeAttribute('data-theme');
-    // ... and remove any theme override cookies
-    Cookies.remove('chassis-theme');
-}
+import './Footer.scss';
 
 export function Footer() {
     const [ system, setSystem ] = useState('light');
@@ -71,9 +48,9 @@ export function Footer() {
             setLocalThemePreference(local);
     }, [ system, local ]);
 
-    const changeThemeMessage = useMemo(() => `Current theme: ${local}. Click to change theme to ${oppositeLocal}.`, [local]);
+    const changeThemeMessage = `Current theme: ${local}. Click to change theme to ${oppositeLocal}.`
 
-    const icon = useMemo(() => local === 'light' ? faMoon : faSun, [local]);
+    const icon = local === 'light' ? faMoon : faSun;
 
     return (
         <footer className="footer">
@@ -146,5 +123,3 @@ export function Footer() {
         </footer>
     );
 }
-
-export default Footer;

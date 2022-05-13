@@ -1,10 +1,9 @@
 import React from 'react';
-
-import Alert from '../components/alert';
-import Code from '../components/code';
-import ExternalLink from '../components/externallink';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Alert from '../components/Alert';
+import Code from '../components/Code';
+import ExternalLink from '../components/ExternalLink';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 const title = 'Grid system',
     description =
@@ -17,7 +16,7 @@ const Summary = () => (
     </>
 );
 
-const IndexPage = () => (
+const GridPage = () => (
     <Layout summary={Summary}>
         <SEO title={title} description={description} />
         <h2>The basics</h2>
@@ -363,4 +362,4 @@ const IndexPage = () => (
     </Layout>
 );
 
-export default IndexPage;
+export default GridPage;

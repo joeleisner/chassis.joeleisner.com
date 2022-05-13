@@ -12,9 +12,9 @@ export const icons = {
     success: faCheckCircle
 };
 
-import './alert.scss';
+import './Alert.scss';
 import React from 'react';
-import Icon from '../icon';
+import Icon from '../Icon';
 
 // The alert component
 export function Alert({ type, children }) {
@@ -41,5 +41,3 @@ Alert.propTypes = {
 Alert.defaultProps = {
     type: 'info'
 };
-
-export default Alert;

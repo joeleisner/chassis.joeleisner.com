@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import Header from '../Header';
+import Footer from '../Footer';
+import ScrollToTop from '../ScrollToTop';
 
-import Header from '../header';
-import Footer from '../footer';
-import ScrollToTop from '../scrolltotop';
-
-import './layout.scss';
+import './Layout.scss';
 
 export function Layout({ summary, children }) {
     const { site } = useStaticQuery(graphql`
@@ -52,8 +50,8 @@ export function Layout({ summary, children }) {
     );
 };
 
+import PropTypes from 'prop-types';
+
 Layout.propTypes = {
     children: PropTypes.node.isRequired
 };
-
-export default Layout;

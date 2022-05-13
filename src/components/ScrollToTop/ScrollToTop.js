@@ -1,30 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import Icon from '../icon';
+import Icon from '../Icon';
 
-import './scrolltotop.scss';
+import './ScrollToTop.scss';
 
-export function scrollThresholds() {
-    const {
-        innerHeight: windowHeight,
-        pageYOffset: scrollOffset
-    } = window;
-    const {
-        body,
-        documentElement: html
-    } = document;
-    const pageHeight = Math.max(
-        body.scrollHeight,
-        body.offsetHeight,
-        html.clientHeight,
-        html.scrollHeight,
-        html.offsetHeight
-    );
-    const top = scrollOffset > 400;
-    const bottom = windowHeight + scrollOffset < pageHeight - 100;
-
-    return { top, bottom };
-};
+import { thresholds as scrollThresholds } from './scroll';
 
 export function ScrollToTop() {
     const elementRef = useRef(null);
@@ -80,5 +60,3 @@ export function ScrollToTop() {
         </button>
     );
 }
-
-export default ScrollToTop;
