@@ -1,8 +1,8 @@
 import React from 'react';
-import Alert from '../components/Alert';
-import Code from '../components/Code';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Alert from '~components/Alert';
+import Code from '~components/Code';
+import Layout from '~components/Layout';
+import SEO from '~components/SEO';
 
 const title = 'Utility classes',
     description =

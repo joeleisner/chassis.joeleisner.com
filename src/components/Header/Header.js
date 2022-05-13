@@ -1,9 +1,9 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import Icon from '../Icon';
-import Logo from '../../images/logo.svg';
-import Wave from '../../images/wave.svg';
+import Icon from '~components/Icon';
+import Logo from '~images/logo.svg';
+import Wave from '~images/wave.svg';
 
 import './Header.scss';
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import Alert from '../components/Alert';
-import Code from '../components/Code';
-import ExternalLink from '../components/ExternalLink';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Alert from '~components/Alert';
+import Code from '~components/Code';
+import ExternalLink from '~components/ExternalLink';
+import Layout from '~components/Layout';
+import SEO from '~components/SEO';
 
 const title = 'Grid system',
     description =

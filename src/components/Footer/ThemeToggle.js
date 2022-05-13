@@ -9,7 +9,7 @@ import {
     faMoon,
     faSun
 } from '@fortawesome/free-solid-svg-icons';
-import Icon from '../Icon';
+import Icon from '~components/Icon';
 
 export function ThemeToggle() {
     const [ system, setSystem ] = useState('light');

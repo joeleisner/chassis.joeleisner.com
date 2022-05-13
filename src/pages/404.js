@@ -4,9 +4,9 @@ import { faSpellCheck } from '@fortawesome/free-solid-svg-icons';
 import { faSitemap } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-import Card from '../components/Card';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Card from '~components/Card';
+import Layout from '~components/Layout';
+import SEO from '~components/SEO';
 
 const Summary = () => (
     <>

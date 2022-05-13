@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Header from '../Header';
-import Footer from '../Footer';
-import ScrollToTop from '../ScrollToTop';
+import Header from '~components/Header';
+import Footer from '~components/Footer';
+import ScrollToTop from '~components/ScrollToTop';
 
 import './Layout.scss';
 

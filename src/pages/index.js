@@ -10,12 +10,12 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import './index.scss';
 
-import Card from '../components/Card';
-import Code from '../components/Code';
-import ExternalLink from '../components/ExternalLink';
-import Icon from '../components/Icon';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Card from '~components/Card';
+import Code from '~components/Code';
+import ExternalLink from '~components/ExternalLink';
+import Icon from '~components/Icon';
+import Layout from '~components/Layout';
+import SEO from '~components/SEO';
 
 const title = 'Chassis.css',
     tagline = 'A minimalistic grid & typography CSS framework.',

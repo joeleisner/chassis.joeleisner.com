@@ -4,8 +4,8 @@ import {
     faHome,
 } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
-import ExternalLink from '../ExternalLink';
-import Icon from '../Icon';
+import ExternalLink from '~components/ExternalLink';
+import Icon from '~components/Icon';
 import { ThemeToggle } from './ThemeToggle';
 
 import './Footer.scss';

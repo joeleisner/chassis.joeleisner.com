@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon';
+import Icon from '~components/Icon';
 
 // The card title component
 export function Title({ icon, title }) {

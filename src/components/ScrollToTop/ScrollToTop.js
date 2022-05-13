@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import Icon from '../Icon';
+import Icon from '~components/Icon';
 
 import './ScrollToTop.scss';
 

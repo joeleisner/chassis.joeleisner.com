@@ -14,7 +14,7 @@ export const icons = {
 
 import './Alert.scss';
 import React from 'react';
-import Icon from '../Icon';
+import Icon from '~components/Icon';
 
 // The alert component
 export function Alert({ type, children }) {
