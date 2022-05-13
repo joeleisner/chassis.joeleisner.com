@@ -8,22 +8,27 @@ import ScrollToTop from '../scrolltotop';
 
 import './layout.scss';
 
-const Layout = ({ summary, children }) => {
-    const data = useStaticQuery(graphql`
-            query DataQuery {
-                site {
-                    siteMetadata {
-                        title
-                        version
-                        navigation {
-                            name
-                            path
-                        }
+export function Layout({ summary, children }) {
+    const { site } = useStaticQuery(graphql`
+        query DataQuery {
+            site {
+                siteMetadata {
+                    title
+                    version
+                    navigation {
+                        name
+                        path
                     }
                 }
             }
-        `),
-        { title, version, navigation } = data.site.siteMetadata;
+        }
+    `);
+
+    const {
+        title,
+        version,
+        navigation
+    } = site.siteMetadata;
 
     return (
         <div className="site">

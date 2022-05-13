@@ -1,92 +1,84 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-
 import Icon from '../icon';
 
 import './scrolltotop.scss';
 
-class ScrollToTop extends React.Component {
-    constructor(props) {
-        super(props);
+export function scrollThresholds() {
+    const {
+        innerHeight: windowHeight,
+        pageYOffset: scrollOffset
+    } = window;
+    const {
+        body,
+        documentElement: html
+    } = document;
+    const pageHeight = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+    );
+    const top = scrollOffset > 400;
+    const bottom = windowHeight + scrollOffset < pageHeight - 100;
+
+    return { top, bottom };
+};
+
+export function ScrollToTop() {
+    const elementRef = useRef(null);
+
+    const [ visibility, setVisibility ] = useState(false);
+
+    const toggleVisibility = (state = !visibility) => setVisibility(state);
+
+    const toggleVisibilityOnScroll = () => {
+        const { top, bottom } = scrollThresholds();
+
+        if (top && bottom) return toggleVisibility(true);
+
+        return toggleVisibility(false);
     }
 
-    toggleVisibility(state) {
-        if (!this.element) return;
-
-        this.element.setAttribute('tabindex', state ? 0 : -1);
-        return this.element.setAttribute('aria-hidden', !state);
-    }
-
-    get scrollThresholds() {
-        const { innerHeight: windowHeight, pageYOffset: scrollOffset } = window,
-            { body, documentElement: html } = document,
-            pageHeight = Math.max(
-                body.scrollHeight,
-                body.offsetHeight,
-                html.clientHeight,
-                html.scrollHeight,
-                html.offsetHeight
-            ),
-            top = scrollOffset > 400,
-            bottom = windowHeight + scrollOffset < pageHeight - 100;
-
-        return { top, bottom };
-    }
-
-    toggleVisibilityOnScroll() {
-        const { top, bottom } = this.scrollThresholds;
-
-        if (top && bottom) return this.toggleVisibility(true);
-
-        return this.toggleVisibility(false);
-    }
-
-    componentDidMount() {
+    useEffect(() => {
         window.addEventListener(
             'scroll',
-            this.toggleVisibilityOnScroll.bind(this),
+            toggleVisibilityOnScroll,
             false
         );
-    }
 
-    componentWillUnmount() {
-        window.removeEventListener(
+        return () => window.removeEventListener(
             'scroll',
-            this.toggleVisibilityOnScroll.bind(this),
+            toggleVisibilityOnScroll,
             false
         );
-    }
+    })
 
-    click() {
-        this.element.blur();
-
+    const onClick = () => {
+        elementRef.current.blur();
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    };
 
-    focus() {
-        this.toggleVisibility(true);
-    }
+    const onFocus = () => toggleVisibility(true);
 
-    blur() {
-        this.toggleVisibility(false);
-    }
+    const onBlur = () => toggleVisibility(false);
 
-    render() {
-        return (
-            <button
-                className="scroll-to-top"
-                onClick={this.click.bind(this)}
-                onFocus={this.focus.bind(this)}
-                onBlur={this.blur.bind(this)}
-                ref={(element) => (this.element = element)}
-            >
-                <Icon
-                    icon={faChevronUp}
-                    text="Scroll back to the top of the page"
-                />
-            </button>
-        );
-    }
+    return (
+        <button
+            className="scroll-to-top"
+            onClick={onClick}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            aria-hidden={!visibility}
+            ref={elementRef}
+        >
+            <Icon
+                icon={faChevronUp}
+                text="Scroll back to the top of the page"
+            />
+        </button>
+    );
 }
 
 export default ScrollToTop;

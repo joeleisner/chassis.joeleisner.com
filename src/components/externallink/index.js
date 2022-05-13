@@ -1,23 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const ExternalLink = ({ href, children, ...props }) => {
-    let properties = props;
-
-    properties['aria-label'] = properties['aria-label'] || properties.title;
-    properties.title = properties.title || properties['aria-label'];
+export function ExternalLink({ href, children, ...props }) {
+    props['aria-label'] = props['aria-label'] || props.title;
+    props.title = props.title || props['aria-label'];
 
     return (
         <a
             href={href}
             rel="noopener noreferrer"
             target="_blank"
-            {...properties}
+            {...props}
         >
             {children}
         </a>
     );
 };
+
+import PropTypes from 'prop-types';
 
 ExternalLink.propTypes = {
     href: PropTypes.string.isRequired,

@@ -1,16 +1,9 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title, image }) {
+export function SEO({ description, lang, meta, title, image }) {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -27,72 +20,83 @@ function SEO({ description, lang, meta, title, image }) {
         `
     );
 
-    const metaDescription = description || site.siteMetadata.description;
+    const {
+        description: siteDescription,
+        title: siteTitle,
+        siteUrl,
+        defaultImage,
+        author
+    } = site.siteMetadata;
+
+    description = description || siteDescription;
+
+    const titleTemplate = title === siteTitle ?
+        `${title} - ${description}` :
+        `%s - ${siteTitle}`;
+
+    image = `${siteUrl}${image || defaultImage}`;
+
+    meta = [
+        {
+            name: 'description',
+            content: description
+        },
+        {
+            property: 'og:title',
+            content: title
+        },
+        {
+            property: 'og:description',
+            content: description
+        },
+        {
+            property: 'og:image',
+            content: image
+        },
+        {
+            property: 'og:type',
+            content: 'website'
+        },
+        {
+            name: 'twitter:card',
+            content: 'summary'
+        },
+        {
+            name: 'twitter:creator',
+            content: author
+        },
+        {
+            name: 'twitter:title',
+            content: title
+        },
+        {
+            name: 'twitter:description',
+            content: description
+        },
+        ...meta
+    ];
 
     return (
         <Helmet
             htmlAttributes={{ lang }}
             title={title}
-            titleTemplate={
-                title === site.siteMetadata.title
-                    ? `${title} - ${metaDescription}`
-                    : `%s - ${site.siteMetadata.title}`
-            }
-            meta={[
-                {
-                    name: 'description',
-                    content: metaDescription
-                },
-                {
-                    property: 'og:title',
-                    content: title
-                },
-                {
-                    property: 'og:description',
-                    content: metaDescription
-                },
-                {
-                    property: 'og:image',
-                    content: `${site.siteMetadata.siteUrl}${
-                        image || site.siteMetadata.defaultImage
-                    }`
-                },
-                {
-                    property: 'og:type',
-                    content: 'website'
-                },
-                {
-                    name: 'twitter:card',
-                    content: 'summary'
-                },
-                {
-                    name: 'twitter:creator',
-                    content: site.siteMetadata.author
-                },
-                {
-                    name: 'twitter:title',
-                    content: title
-                },
-                {
-                    name: 'twitter:description',
-                    content: metaDescription
-                }
-            ].concat(meta)}
+            titleTemplate={titleTemplate}
+            meta={meta}
         />
     );
 }
-
-SEO.defaultProps = {
-    lang: 'en',
-    meta: [],
-    description: ''
-};
 
 SEO.propTypes = {
     description: PropTypes.string,
     lang: PropTypes.string,
     meta: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string.isRequired
+};
+
+SEO.defaultProps = {
+    lang: 'en',
+    meta: [],
+    description: ''
 };
 
 export default SEO;

@@ -1,76 +1,112 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { a11yDark as Dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import './code.scss';
 
-class Code extends React.Component {
-    constructor(props) {
-        super(props);
-        this.example = React.createRef();
-    }
+// The code example component
+export function Example({ children }) {
+    const exampleRef = useRef(null);
 
-    state = {
-        copied: false
+    useEffect(() => {
+        exampleRef.current.innerHTML = children;
+    });
+
+    return (
+        <div className="code__example" ref={exampleRef}>
+        </div>
+    );
+}
+
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
+// The code copy button component
+export function Copy({ text }) {
+    const copyRef = useRef(false);
+
+    const [ copy, setCopy ] = useState(false);
+
+    useEffect(() => {
+        copyRef.current = copy;
+    }, [copy]);
+
+    const onCopy = () => {
+        setCopy(true);
+        setTimeout(() => setCopy(false), 2000);
     };
 
-    convertChildrenIntoCodeExample() {
-        this.example.current.innerHTML = this.props.children;
-    }
+    const copyText = useMemo(() => copy ? 'Copied' : 'Copy');
 
-    componentDidMount() {
-        if (this.props.example) this.convertChildrenIntoCodeExample();
-    }
+    return (
+        <CopyToClipboard
+            text={text}
+            onCopy={onCopy}
+        >
+            <button className="code__copy">
+                { copyText }
+            </button>
+        </CopyToClipboard>
+    );
+}
 
-    onCopy() {
-        const { copied } = this.state;
-        this.setState({ copied: !copied });
-        setTimeout(() => this.setState({ copied }), 2000);
-    }
+import PropTypes from 'prop-types';
 
-    render() {
-        const { language, example, children, ...props } = this.props;
-        return (
-            <div className="code">
-                {example ? (
-                    <div className="code__example" ref={this.example}></div>
-                ) : (
-                    ''
-                )}
-                <div className="code__snippet">
-                    <CopyToClipboard
-                        text={children}
-                        onCopy={this.onCopy.bind(this)}
-                    >
-                        <button className="code__copy">
-                            {this.state.copied ? 'Copied' : 'Copy'}
-                        </button>
-                    </CopyToClipboard>
-                    <SyntaxHighlighter
-                        className="code__syntax"
-                        language={language}
-                        style={Dark}
-                        customStyle={{ padding: '1rem' }}
-                        {...props}
-                    >
-                        {children}
-                    </SyntaxHighlighter>
-                </div>
+Copy.propTypes = {
+    text: PropTypes.string.isRequired
+};
+
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+// The code syntax component
+export function Syntax({ language, children, ...props }) {
+    return (
+        <SyntaxHighlighter
+            className="code__syntax"
+            language={language}
+            style={a11yDark}
+            customStyle={{ padding: '1rem' }}
+            {...props}
+        >
+            {children}
+        </SyntaxHighlighter>
+    )
+}
+
+Syntax.propTypes = {
+    language: PropTypes.string,
+    children: Copy.propTypes.text
+};
+
+Syntax.defaultProps = {
+    language: 'xml'
+};
+
+export function Code({
+    language,
+    example,
+    children,
+    ...props
+}) {
+    if (example) example = <Example>{children}</Example>;
+
+    return (
+        <div className="code">
+            { example }
+            <div className="code__snippet">
+                <Copy text={children}/>
+                <Syntax language={language} {...props}>
+                    {children}
+                </Syntax>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 Code.propTypes = {
-    language: PropTypes.string,
+    language: Syntax.propTypes.language,
     example: PropTypes.bool,
-    children: PropTypes.string.isRequired
+    children: Copy.propTypes.text
 };
 
 Code.defaultProps = {
-    language: 'xml',
     example: true
 };
 
