@@ -11,7 +11,7 @@ export function Icon({ icon, text, ...props }) {
             {hiddenText}
         </>
     );
-};
+}
 
 Icon.propTypes = {
     icon: PropTypes.object.isRequired,

@@ -29,7 +29,7 @@ export function Alert({ type, children }) {
             <div className="alert__content">{children}</div>
         </aside>
     );
-};
+}
 
 import PropTypes from 'prop-types';
 

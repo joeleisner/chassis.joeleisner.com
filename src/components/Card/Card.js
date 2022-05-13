@@ -10,7 +10,7 @@ export function Card({ icon, title, children, ...props }) {
             <div className="card__description">{children}</div>
         </div>
     );
-};
+}
 
 import PropTypes from 'prop-types';
 

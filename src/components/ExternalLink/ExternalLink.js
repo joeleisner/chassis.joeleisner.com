@@ -14,11 +14,13 @@ export function ExternalLink({ href, children, ...props }) {
             {children}
         </a>
     );
-};
+}
 
 import PropTypes from 'prop-types';
 
 ExternalLink.propTypes = {
     href: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    'aria-label': PropTypes.string,
+    title: PropTypes.string
 };

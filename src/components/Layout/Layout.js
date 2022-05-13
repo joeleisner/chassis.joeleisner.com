@@ -48,10 +48,11 @@ export function Layout({ summary, children }) {
             <Footer />
         </div>
     );
-};
+}
 
 import PropTypes from 'prop-types';
 
 Layout.propTypes = {
+    summary: PropTypes.oneOf(PropTypes.func, PropTypes.string),
     children: PropTypes.node.isRequired
 };

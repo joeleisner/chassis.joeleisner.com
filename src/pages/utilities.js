@@ -32,16 +32,16 @@ const UtilitiesPage = () => (
         </p>
         <ul>
             <li>
-                <code>l</code> means "left" and aligns text to the left.
+                <code>l</code> means &ldquo;left&rdquo; and aligns text to the left.
             </li>
             <li>
-                <code>c</code> means "center" and aligns text in the center.
+                <code>c</code> means &ldquo;center&rdquo; and aligns text in the center.
             </li>
             <li>
-                <code>r</code> means "right" and aligns text to the right.
+                <code>r</code> means &ldquo;right&rdquo; and aligns text to the right.
             </li>
             <li>
-                <code>j</code> means "justified" and justifies the text.
+                <code>j</code> means &ldquo;justified&rdquo; and justifies the text.
             </li>
         </ul>
         <h2>List styles</h2>
@@ -64,27 +64,27 @@ const UtilitiesPage = () => (
         </p>
         <ul>
             <li>
-                <code>u</code> means "unstyled" and unstyles the list.
+                <code>u</code> means &ldquo;unstyled&rdquo; and unstyles the list.
             </li>
             <li>
-                <code>i</code> means "inline" and makes each list item{' '}
+                <code>i</code> means &ldquo;inline&rdquo; and makes each list item{' '}
                 <code>display: inline-block</code>.
             </li>
         </ul>
         <h2>Screen readers</h2>
         <p>
             Sometimes while not wanting to display text it is important to allow
-            folks using screen readers to contextually understand what's going
+            folks using screen readers to contextually understand what&rsquo;s going
             on; This is where screen reader classes come in handy. The following
             are the screen reader classes available:
         </p>
         <ul>
             <li>
-                <code>.sr</code> means "screen reader" and will hide the element
+                <code>.sr</code> means &ldquo;screen reader&rdquo; and will hide the element
                 while still being readable to screen readers.
             </li>
             <li>
-                <code>.sr-f</code> means "screen reader focusable" and will hide
+                <code>.sr-f</code> means &ldquo;screen reader focusable&rdquo; and will hide
                 the element until focused.
             </li>
         </ul>
@@ -105,19 +105,19 @@ const UtilitiesPage = () => (
         </p>
         <ul>
             <li>
-                <code>t</code> means "top" and adjusts the top margin of the
+                <code>t</code> means &ldquo;top&rdquo; and adjusts the top margin of the
                 element.
             </li>
             <li>
-                <code>r</code> means "right" and adjusts the right margin of the
+                <code>r</code> means &ldquo;right&rdquo; and adjusts the right margin of the
                 element.
             </li>
             <li>
-                <code>b</code> means "bottom" and adjusts the bottom margin of
+                <code>b</code> means &ldquo;bottom&rdquo; and adjusts the bottom margin of
                 the element.
             </li>
             <li>
-                <code>l</code> means "left" and adjusts the left margin of the
+                <code>l</code> means &ldquo;left&rdquo; and adjusts the left margin of the
                 element.
             </li>
         </ul>
@@ -132,35 +132,35 @@ const UtilitiesPage = () => (
         </p>
         <ul>
             <li>
-                <code>a</code> means "auto" and applies a margin value of{' '}
+                <code>a</code> means &ldquo;auto&rdquo; and applies a margin value of{' '}
                 <code>auto</code>.
             </li>
             <li>
-                <code>z</code> means "zero" and applies a margin value of{' '}
+                <code>z</code> means &ldquo;zero&rdquo; and applies a margin value of{' '}
                 <code>0</code>.
             </li>
             <li>
-                <code>t</code> means "third" and applies a margin value of{' '}
+                <code>t</code> means &ldquo;third&rdquo; and applies a margin value of{' '}
                 <code>5px</code>, or a third of <code>15px</code>.
             </li>
             <li>
-                <code>h</code> means "half" and applies a margin value of{' '}
+                <code>h</code> means &ldquo;half&rdquo; and applies a margin value of{' '}
                 <code>7.5px</code>, or a half of <code>15px</code>.
             </li>
             <li>
-                <code>f</code> means "full" and applies a margin value of{' '}
+                <code>f</code> means &ldquo;full&rdquo; and applies a margin value of{' '}
                 <code>15px</code>.
             </li>
             <li>
-                <code>d</code> means "double" and applies a margin value of{' '}
+                <code>d</code> means &ldquo;double&rdquo; and applies a margin value of{' '}
                 <code>30px</code>, or <code>15px</code> doubled.
             </li>
         </ul>
         <Alert>
             <p>
                 If <code>*</code> is prefixed with <code>n</code>, the amount of
-                adjusment will be negative. This does not apply to the "auto"{' '}
-                <code>a</code> or "zero" <code>z</code> adjustment amounts.
+                adjusment will be negative. This does not apply to the &ldquo;auto&rdquo;{' '}
+                <code>a</code> or &ldquo;zero&rdquo; <code>z</code> adjustment amounts.
             </p>
         </Alert>
         <h3>Padding adjustments</h3>
@@ -174,19 +174,19 @@ const UtilitiesPage = () => (
         </p>
         <ul>
             <li>
-                <code>t</code> means "top" and adjusts the top padding of the
+                <code>t</code> means &ldquo;top&rdquo; and adjusts the top padding of the
                 element.
             </li>
             <li>
-                <code>r</code> means "right" and adjusts the right padding of
+                <code>r</code> means &ldquo;right&rdquo; and adjusts the right padding of
                 the element.
             </li>
             <li>
-                <code>b</code> means "bottom" and adjusts the bottom padding of
+                <code>b</code> means &ldquo;bottom&rdquo; and adjusts the bottom padding of
                 the element.
             </li>
             <li>
-                <code>l</code> means "left" and adjusts the left padding of the
+                <code>l</code> means &ldquo;left&rdquo; and adjusts the left padding of the
                 element.
             </li>
         </ul>
@@ -201,23 +201,23 @@ const UtilitiesPage = () => (
         </p>
         <ul>
             <li>
-                <code>z</code> means "zero" and applies a padding value of{' '}
+                <code>z</code> means &ldquo;zero&rdquo; and applies a padding value of{' '}
                 <code>0</code>.
             </li>
             <li>
-                <code>t</code> means "third" and applies a padding value of{' '}
+                <code>t</code> means &ldquo;third&rdquo; and applies a padding value of{' '}
                 <code>5px</code>, or a third of <code>15px</code>.
             </li>
             <li>
-                <code>h</code> means "half" and applies a padding value of{' '}
+                <code>h</code> means &ldquo;half&rdquo; and applies a padding value of{' '}
                 <code>7.5px</code>, or a half of <code>15px</code>.
             </li>
             <li>
-                <code>f</code> means "full" and applies a padding value of{' '}
+                <code>f</code> means &ldquo;full&rdquo; and applies a padding value of{' '}
                 <code>15px</code>.
             </li>
             <li>
-                <code>d</code> means "double" and applies a padding value of{' '}
+                <code>d</code> means &ldquo;double&rdquo; and applies a padding value of{' '}
                 <code>30px</code>, or <code>15px</code> doubled.
             </li>
         </ul>
@@ -225,7 +225,7 @@ const UtilitiesPage = () => (
         <p>
             Sometimes you want to show an element only at a certain viewport
             size, or sometimes you want hide an element at a certain viewport
-            size; In both cases, that's where visibility classes come to the
+            size; In both cases, that&rsquo;s where visibility classes come to the
             rescue.
         </p>
         <Code>{`<div class="container">
@@ -261,19 +261,19 @@ const UtilitiesPage = () => (
         </p>
         <ul>
             <li>
-                <code>xs</code> means "extra small" and targets viewports less
+                <code>xs</code> means &ldquo;extra small&rdquo; and targets viewports less
                 than 768px wide.
             </li>
             <li>
-                <code>sm</code> means "small" and targets viewports greater than
+                <code>sm</code> means &ldquo;small&rdquo; and targets viewports greater than
                 or equal to 768px wide but less than 992px wide.
             </li>
             <li>
-                <code>md</code> means "medium" and targets viewports greater
+                <code>md</code> means &ldquo;medium&rdquo; and targets viewports greater
                 than or equal to 992px wide but less than 1200px wide.
             </li>
             <li>
-                <code>lg</code> means "large" and targets viewports greater than
+                <code>lg</code> means &ldquo;large&rdquo; and targets viewports greater than
                 or equal to 1200px wide.
             </li>
         </ul>
@@ -282,13 +282,13 @@ const UtilitiesPage = () => (
         </p>
         <ul>
             <li>
-                <code>s</code> means "show" and applies{' '}
+                <code>s</code> means &ldquo;show&rdquo; and applies{' '}
                 <code>display: block</code> to the element at the targeted
                 viewport width and applies <code>display: none</code> to the
                 element at all other viewport widths.
             </li>
             <li>
-                <code>h</code> means "hide" and applies applies{' '}
+                <code>h</code> means &ldquo;hide&rdquo; and applies applies{' '}
                 <code>display: none</code> to the element at the targeted
                 viewport width and applies <code>display: hide</code> to the
                 element at all other viewport widths.

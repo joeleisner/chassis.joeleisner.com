@@ -77,8 +77,8 @@ const ResetPage = () => (
         <h3>Heading classes</h3>
         <p>
             Sometimes you want to style elements to look like headings,
-            especially in the event that an actual heading element doesn't make
-            sense logically or from an accessibility standpoint; That's where
+            especially in the event that an actual heading element doesn&rsquo;t make
+            sense logically or from an accessibility standpoint; That&rsquo;s where
             heading classes come in handy:
         </p>
         <Code>{`<p class="h1">Heading 1</p>
@@ -115,7 +115,7 @@ const ResetPage = () => (
     <li>Ordered list item 1</li>
 </ol>`}</Code>
         <p>
-            In the above example, there's a paragraph, an unordered list, and an
+            In the above example, there&rsquo;s a paragraph, an unordered list, and an
             ordered list. All of these elements have a bottom margin of{' '}
             <code>1rem</code>.
         </p>

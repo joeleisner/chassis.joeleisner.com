@@ -81,10 +81,8 @@ export function Header({
 import PropTypes from 'prop-types';
 
 Header.propTypes = {
-    children: PropTypes.node.isRequired,
-    siteTitle: PropTypes.string
-};
-
-Header.defaultProps = {
-    siteTitle: ''
+    title: PropTypes.string.isRequired,
+    version: PropTypes.string.isRequired,
+    navigation: PropTypes.arrayOf(PropTypes.object),
+    children: PropTypes.node.isRequired
 };
