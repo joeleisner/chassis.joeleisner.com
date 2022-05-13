@@ -29,7 +29,7 @@ const Summary = () => (
         <div className="index__buttons">
             <ExternalLink
                 href="https://github.com/joeleisner/chassis-css/releases"
-                title="Download Chassis.css releases"
+                title="Download Chassis.css via GitHub releases"
                 className="index__button index__button--highlight"
             >
                 <Icon icon={faArrowCircleDown} style={{ width: '1em' }} />

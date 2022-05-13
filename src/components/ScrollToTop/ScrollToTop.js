@@ -44,13 +44,18 @@ export function ScrollToTop() {
 
     const onBlur = () => toggleVisibility(false);
 
+    const ariaHidden = !visibility;
+
+    const tabIndex = visibility ? 0 : -1;
+
     return (
         <button
             className="scroll-to-top"
             onClick={onClick}
             onFocus={onFocus}
             onBlur={onBlur}
-            aria-hidden={!visibility}
+            aria-hidden={ariaHidden}
+            tabIndex={tabIndex}
             ref={elementRef}
         >
             <Icon
