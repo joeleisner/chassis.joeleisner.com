@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-    faArrowCircleDown,
-    faAsterisk,
+    faDownload,
     faBook,
     faExpand,
-    faFeather
+    faFeather,
+    faBolt
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
 import './index.scss';
 
@@ -32,7 +32,7 @@ const Summary = () => (
                 title="Download Chassis.css via GitHub releases"
                 className="index__button index__button--highlight"
             >
-                <Icon icon={faArrowCircleDown} style={{ width: '1em' }} />
+                <Icon icon={faDownload} style={{ width: '1em' }} />
                 Download
             </ExternalLink>
             <ExternalLink
@@ -40,7 +40,7 @@ const Summary = () => (
                 title="Chassis.css GitHub"
                 className="index__button"
             >
-                <Icon icon={faGithub} style={{ width: '1em' }} />
+                <Icon icon={faGithubAlt} style={{ width: '1em' }} />
                 GitHub
             </ExternalLink>
             <ExternalLink
@@ -78,7 +78,7 @@ const IndexPage = () => (
                 </Card>
             </div>
             <div className="col mb-f">
-                <Card icon={faAsterisk} title="Modern">
+                <Card icon={faBolt} title="Modern">
                     <p>
                         Built mobile-first using newer web technologies such as
                         CSS flexbox, chassis.css provides a modern framework for

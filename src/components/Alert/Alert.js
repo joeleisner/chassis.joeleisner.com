@@ -1,14 +1,14 @@
 import {
     faInfoCircle,
-    faExclamationCircle,
+    faExclamationTriangle,
     faCheckCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 // Define a map of valid alert icons
 export const icons = {
     info: faInfoCircle,
-    warning: faExclamationCircle,
-    danger: faExclamationCircle,
+    warning: faExclamationTriangle,
+    danger: faExclamationTriangle,
     success: faCheckCircle
 };
 

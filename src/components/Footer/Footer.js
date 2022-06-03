@@ -3,7 +3,7 @@ import {
     faHeart,
     faHome,
 } from '@fortawesome/free-solid-svg-icons';
-import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 import ExternalLink from '~components/ExternalLink';
 import Icon from '~components/Icon';
 import { ThemeToggle } from './ThemeToggle';
@@ -60,7 +60,7 @@ export function Footer() {
                                 title="Joel Eisner's GitHub page"
                             >
                                 <Icon
-                                    icon={faGithub}
+                                    icon={faGithubAlt}
                                     style={{ width: '1rem' }}
                                     text="Joel Eisner's GitHub page"
                                 />
