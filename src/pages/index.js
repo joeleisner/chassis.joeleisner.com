@@ -1,21 +1,21 @@
 import React from 'react';
 import {
-    faArrowCircleDown,
-    faAsterisk,
+    faDownload,
     faBook,
     faExpand,
-    faFeather
+    faFeather,
+    faBolt
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
 import './index.scss';
 
-import Card from '../components/card';
-import Code from '../components/code';
-import ExternalLink from '../components/externallink';
-import Icon from '../components/icon';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Card from '~components/Card';
+import Code from '~components/Code';
+import ExternalLink from '~components/ExternalLink';
+import Icon from '~components/Icon';
+import Layout from '~components/Layout';
+import SEO from '~components/SEO';
 
 const title = 'Chassis.css',
     tagline = 'A minimalistic grid & typography CSS framework.',
@@ -29,10 +29,10 @@ const Summary = () => (
         <div className="index__buttons">
             <ExternalLink
                 href="https://github.com/joeleisner/chassis-css/releases"
-                title="Download Chassis.css releases"
+                title="Download Chassis.css via GitHub releases"
                 className="index__button index__button--highlight"
             >
-                <Icon icon={faArrowCircleDown} style={{ width: '1em' }} />
+                <Icon icon={faDownload} style={{ width: '1em' }} />
                 Download
             </ExternalLink>
             <ExternalLink
@@ -40,7 +40,7 @@ const Summary = () => (
                 title="Chassis.css GitHub"
                 className="index__button"
             >
-                <Icon icon={faGithub} style={{ width: '1em' }} />
+                <Icon icon={faGithubAlt} style={{ width: '1em' }} />
                 GitHub
             </ExternalLink>
             <ExternalLink
@@ -78,7 +78,7 @@ const IndexPage = () => (
                 </Card>
             </div>
             <div className="col mb-f">
-                <Card icon={faAsterisk} title="Modern">
+                <Card icon={faBolt} title="Modern">
                     <p>
                         Built mobile-first using newer web technologies such as
                         CSS flexbox, chassis.css provides a modern framework for

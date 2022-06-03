@@ -1,26 +1,25 @@
-import { Link } from 'gatsby';
 import React from 'react';
-
+import { Link } from 'gatsby';
 import { faSpellCheck } from '@fortawesome/free-solid-svg-icons';
 import { faSitemap } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-import Card from '../components/card';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Card from '~components/Card';
+import Layout from '~components/Layout';
+import SEO from '~components/SEO';
 
 const Summary = () => (
     <>
         <h1>Page not found.</h1>
-        <p>The page you requested doesn't seem to exist.</p>
+        <p>The page you requested doesn&rsquo;t seem to exist.</p>
     </>
 );
 
-const NotFoundPage = () => (
+const PageNotFound = () => (
     <Layout summary={Summary}>
         <SEO title="Page Not found" />
         <h2>Things you can do.</h2>
-        <p>Here's some tips to help you find your way.</p>
+        <p>Here&rsquo;s some tips to help you find your way.</p>
         <div className="row">
             <div className="col mb-f">
                 <Card icon={faSpellCheck}>
@@ -34,7 +33,7 @@ const NotFoundPage = () => (
                 <Card icon={faSitemap}>
                     <p>
                         Checkout the <Link to="/sitemap.xml">sitemap</Link> for
-                        pages that are similar to what you're looking for.
+                        pages that are similar to what you&rsquo;re looking for.
                     </p>
                 </Card>
             </div>
@@ -51,4 +50,4 @@ const NotFoundPage = () => (
     </Layout>
 );
 
-export default NotFoundPage;
+export default PageNotFound;

@@ -1,10 +1,9 @@
 import React from 'react';
-
-import Alert from '../components/alert';
-import Code from '../components/code';
-import ExternalLink from '../components/externallink';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Alert from '~components/Alert';
+import Code from '~components/Code';
+import ExternalLink from '~components/ExternalLink';
+import Layout from '~components/Layout';
+import SEO from '~components/SEO';
 
 const title = 'Grid system',
     description =
@@ -17,12 +16,12 @@ const Summary = () => (
     </>
 );
 
-const IndexPage = () => (
+const GridPage = () => (
     <Layout summary={Summary}>
         <SEO title={title} description={description} />
         <h2>The basics</h2>
         <p>
-            There's a few things to keep in mind when using the chassis.css grid
+            There&rsquo;s a few things to keep in mind when using the chassis.css grid
             system.
         </p>
         <ul>
@@ -42,7 +41,7 @@ const IndexPage = () => (
         <p>
             Columns with fixed widths always follow the <code>.col-*</code>{' '}
             class structure, where <code>*</code> can be any number between 1
-            and 12. Let's see this in action below:
+            and 12. Let&rsquo;s see this in action below:
         </p>
         <Code>{`<div class="container">
     <div class="row">
@@ -57,10 +56,10 @@ const IndexPage = () => (
         </p>
         <h3>Auto width columns</h3>
         <p>
-            Columns don't require a fixed width, however. Auto width columns use
+            Columns don&rsquo;t require a fixed width, however. Auto width columns use
             the <code>.col</code> class, and will take up the remainder of
             horizontal space when next to set-width columns. A row of all auto
-            width columns will divide the horizontal space up evenly. Let's redo
+            width columns will divide the horizontal space up evenly. Let&rsquo;s redo
             the first example with auto-width columns:
         </p>
         <Code>{`<div class="container">
@@ -129,7 +128,7 @@ const IndexPage = () => (
         </p>
         <h3>Vertical column alignment</h3>
         <p>
-            First, let's see how we can vertically align all columns within a
+            First, let&rsquo;s see how we can vertically align all columns within a
             row:
         </p>
         <Code>{`<div class="container">
@@ -141,31 +140,31 @@ const IndexPage = () => (
 </div>`}</Code>
         <p>
             In the above example, we are aligning the columns in the center of a
-            row that has been manually set to 200px tall using one of the "align
-            items" modifier classes and one of the "align content" modifier
+            row that has been manually set to 200px tall using one of the &quot;align
+            items&ldquo; modifier classes and one of the &rdquo;align content&quot; modifier
             classes. This is added to the row and follows the <code>.ai-*</code>{' '}
             (align items) and <code>.ac-*</code> (align content) class
             structure, where <code>*</code> can be one of the following letters:
         </p>
         <ul>
             <li>
-                <code>s</code> means "start" and aligns columns to the top of
+                <code>s</code> means &ldquo;start&rdquo; and aligns columns to the top of
                 the row.
             </li>
             <li>
-                <code>c</code> means "center" and aligns columns to the
+                <code>c</code> means &ldquo;center&rdquo; and aligns columns to the
                 vertical-middle of the row.
             </li>
             <li>
-                <code>e</code> means "end" and aligns columns to the bottom of
+                <code>e</code> means &ldquo;end&rdquo; and aligns columns to the bottom of
                 the row.
             </li>
         </ul>
         <Alert>
             <p>
-                If you're confused about the differences between the "align
-                items" modifier classes (which uses the flexbox{' '}
-                <code>align-items</code> rule) and the "align content" modifier
+                If you&rsquo;re confused about the differences between the &quot;align
+                items&quot; modifier classes (which uses the flexbox{' '}
+                <code>align-items</code> rule) and the &ldquo;align content&rdquo; modifier
                 classes (which uses the flexbox <code>align-content</code>{' '}
                 rule), check out this handy{' '}
                 <ExternalLink
@@ -178,7 +177,7 @@ const IndexPage = () => (
             </p>
         </Alert>
         <p>
-            There's also the "align self" modifier classes. These are added to a
+            There&rsquo;s also the &ldquo;align self&rdquo; modifier classes. These are added to a
             column, independently affecting its vertical alignment, and follow
             the <code>.as-*</code> class structure, where <code>*</code> can be
             one of the letters in the list above.
@@ -197,34 +196,34 @@ const IndexPage = () => (
         </p>
         <h3>Horizontal column alignment</h3>
         <p>
-            Columns can also be vertically aligned using the "justify content"
+            Columns can also be vertically aligned using the &ldquo;justify content&rdquo;
             modifier classes. These are added to the row and follow the{' '}
             <code>.jc-*</code> class structure, where <code>*</code> is one of
             the following letters:
         </p>
         <ul>
             <li>
-                <code>s</code> means "start" and aligns columns to the left of
+                <code>s</code> means &ldquo;start&rdquo; and aligns columns to the left of
                 the row.
             </li>
             <li>
-                <code>c</code> means "center" and aligns columns to the
+                <code>c</code> means &ldquo;center&rdquo; and aligns columns to the
                 horizontal-middle of the row.
             </li>
             <li>
-                <code>e</code> means "end" and aligns columns to the right of
+                <code>e</code> means &ldquo;end&rdquo; and aligns columns to the right of
                 the row.
             </li>
             <li>
-                <code>a</code> means "space around" and aligns columns with an
+                <code>a</code> means &ldquo;space around&rdquo; and aligns columns with an
                 even amount of horizontal space around them.
             </li>
             <li>
-                <code>b</code> means "space between" and aligns columns with an
+                <code>b</code> means &ldquo;space between&rdquo; and aligns columns with an
                 even amount of horizontal space between them.
             </li>
         </ul>
-        <p>Let's check it out:</p>
+        <p>Let&rsquo;s check it out:</p>
         <Code>{`<div class="container">
     <div class="row jc-s">
         <div class="col-1">.col-1</div>
@@ -253,19 +252,19 @@ const IndexPage = () => (
     </div>
 </div>`}</Code>
         <p>
-            In the above example, each row has one of the possible "justify
-            content" modifier classes on it.
+            In the above example, each row has one of the possible &quot;justify
+            content&quot; modifier classes on it.
         </p>
         <h2>Column offsets</h2>
         <p>
             Columns can be offset from the start of a row or from a column to
-            the left of itself using the "offset" modifier classes. These are
+            the left of itself using the &ldquo;offset&rdquo; modifier classes. These are
             added to a column and follow the <code>.os-*</code> class structure,
             where <code>*</code> is one of the following:
         </p>
         <ul>
             <li>
-                <code>a</code> means "auto" and puts as much space as possible
+                <code>a</code> means &ldquo;auto&rdquo; and puts as much space as possible
                 to the left of the column.
             </li>
             <li>
@@ -274,7 +273,7 @@ const IndexPage = () => (
         </ul>
         <p>
             When the viewport is less than 768px wide, these offsets will be
-            removed. Let's see this in action:
+            removed. Let&rsquo;s see this in action:
         </p>
         <Code>{`<div class="container">
     <div class="row">
@@ -300,7 +299,7 @@ const IndexPage = () => (
         <h2>Column order</h2>
         <p>
             Columns can be ordered relatively from one another independently of
-            the order they are placed in the row using the "order" modifier
+            the order they are placed in the row using the &ldquo;order&rdquo; modifier
             classes. These are added to a column and follow one of the following
             class structures where <code>*</code> is any number 1 and 12:
         </p>
@@ -312,7 +311,7 @@ const IndexPage = () => (
             <li>
                 <code>.or-r*</code> changes the order of a column but resets the
                 order when the viewport is less than 768px wide. This is similar
-                behavior to the previous "push/pull" modifier classes in
+                behavior to the previous &ldquo;push/pull&rdquo; modifier classes in
                 previous versions of this framework.
             </li>
         </ul>
@@ -337,7 +336,7 @@ const IndexPage = () => (
         <h3>Row reversing</h3>
         <p>
             The first row from the above example can also be accomplished using
-            the "reverse" modifier class. This is added to a row and uses the{' '}
+            the &ldquo;reverse&rdquo; modifier class. This is added to a row and uses the{' '}
             <code>.rev</code> class. This will not be reset when the viewport is
             less than 768px wide.
         </p>
@@ -354,7 +353,7 @@ const IndexPage = () => (
         </p>
         <Alert>
             <p>
-                If you're familiar with how CSS flexbox works, you can use the
+                If you&rsquo;re familiar with how CSS flexbox works, you can use the
                 modifier classes listed above on any <code>display: flex</code>{' '}
                 elements or its children, as these use the flexbox alignment
                 rules.
@@ -363,4 +362,4 @@ const IndexPage = () => (
     </Layout>
 );
 
-export default IndexPage;
+export default GridPage;

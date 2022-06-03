@@ -1,9 +1,8 @@
 import React from 'react';
-
-import Alert from '../components/alert';
-import Code from '../components/code';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Alert from '~components/Alert';
+import Code from '~components/Code';
+import Layout from '~components/Layout';
+import SEO from '~components/SEO';
 
 const title = 'Style resets',
     description =
@@ -16,7 +15,7 @@ const Summary = () => (
     </>
 );
 
-const IndexPage = () => (
+const ResetPage = () => (
     <Layout summary={Summary}>
         <SEO title={title} description={description} />
         <h2>The basics</h2>
@@ -78,8 +77,8 @@ const IndexPage = () => (
         <h3>Heading classes</h3>
         <p>
             Sometimes you want to style elements to look like headings,
-            especially in the event that an actual heading element doesn't make
-            sense logically or from an accessibility standpoint; That's where
+            especially in the event that an actual heading element doesn&rsquo;t make
+            sense logically or from an accessibility standpoint; That&rsquo;s where
             heading classes come in handy:
         </p>
         <Code>{`<p class="h1">Heading 1</p>
@@ -116,7 +115,7 @@ const IndexPage = () => (
     <li>Ordered list item 1</li>
 </ol>`}</Code>
         <p>
-            In the above example, there's a paragraph, an unordered list, and an
+            In the above example, there&rsquo;s a paragraph, an unordered list, and an
             ordered list. All of these elements have a bottom margin of{' '}
             <code>1rem</code>.
         </p>
@@ -157,4 +156,4 @@ const IndexPage = () => (
     </Layout>
 );
 
-export default IndexPage;
+export default ResetPage;
